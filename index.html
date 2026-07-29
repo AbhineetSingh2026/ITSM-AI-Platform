@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhineet Singh | Global ITSM & AI Automation Platform</title>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyberBg: '#070913',
+            cyberSlate: 'rgba(20, 24, 46, 0.45)',
+            cyberCyan: '#00f2fe',
+            cyberPurple: '#7f00ff',
+            cyberGreen: '#39ff14',
+            cyberBlue: '#007bff'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styling Sheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cyberBg text-slate-100 min-h-screen relative overflow-x-hidden">
+
+  <!-- Cinematic Background Elements -->
+  <div class="cyber-grid"></div>
+  <div class="glow-aura glow-cyan"></div>
+  <div class="glow-aura glow-purple"></div>
+
+  <!-- Master Layout Container -->
+  <div class="flex min-h-screen relative z-10">
+
+    <!-- Floating Glassmorphic Sidebar Navigation (Responsive) -->
+    <aside class="w-64 glass-panel border-r border-slate-800 fixed h-[95vh] left-4 top-[2.5vh] flex flex-col justify-between py-6 px-4 hidden md:flex z-50">
+      <div>
+        <!-- Platform Logo / Brand -->
+        <div class="flex items-center gap-3 px-3 mb-8">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyberPurple to-cyberCyan flex items-center justify-center shadow-lg shadow-cyberPurple/25">
+            <i class="fa-solid fa-microchip text-white text-lg"></i>
+          </div>
+          <div>
+            <h2 class="font-bold text-sm tracking-wide text-white font-mono uppercase">AI-ITSM HUB</h2>
+            <span class="text-[10px] text-cyberCyan font-bold tracking-widest uppercase">Version 2.0</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="space-y-1">
+          <a href="#" onclick="switchTab('home')" id="nav-home" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent active-nav-item">
+            <i class="fa-solid fa-house text-base"></i> Home Portal
+          </a>
+          <a href="#" onclick="switchTab('about')" id="nav-about" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent">
+            <i class="fa-solid fa-user-tie text-base"></i> About Me
+          </a>
+          <a href="#" onclick="switchTab('services')" id="nav-services" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent">
+            <i class="fa-solid fa-screwdriver-wrench text-base"></i> Services
+          </a>
+          <a href="#" onclick="switchTab('course')" id="nav-course" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent">
+            <i class="fa-solid fa-graduation-cap text-base text-amber-400"></i> Service Desk Course <span class="px-1.5 py-0.5 text-[9px] font-extrabold bg-amber-400/20 text-amber-400 border border-amber-400/30 rounded-md uppercase ml-auto">Free</span>
+          </a>
+          <a href="#" onclick="switchTab('ai-sandbox')" id="nav-ai-sandbox" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent">
+            <i class="fa-solid fa-robot text-base text-cyberCyan"></i> AI Sandbox
+          </a>
+          <a href="#" onclick="switchTab('blog')" id="nav-blog" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent">
+            <i class="fa-solid fa-newspaper text-base"></i> Blog Hub
+          </a>
+          <a href="#" onclick="switchTab('forum')" id="nav-forum" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent">
+            <i class="fa-solid fa-comments text-base"></i> Forum Community
+          </a>
+          <a href="#" onclick="switchTab('youtube')" id="nav-youtube" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent">
+            <i class="fa-brands fa-youtube text-base text-red-500"></i> YouTube Hub
+          </a>
+          <a href="#" onclick="switchTab('resources')" id="nav-resources" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent">
+            <i class="fa-solid fa-download text-base"></i> Resources
+          </a>
+          <a href="#" onclick="switchTab('contact')" id="nav-contact" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 hover:text-white transition-all text-sm font-semibold border-l-3 border-transparent">
+            <i class="fa-solid fa-envelope text-base"></i> Contact
+          </a>
+        </nav>
+      </div>
+
+      <!-- Quick Platform Status -->
+      <div class="px-3">
+        <div class="p-3 bg-white/[0.02] border border-white/[0.05] rounded-xl flex items-center gap-3">
+          <div class="w-2.5 h-2.5 rounded-full bg-cyberGreen pulse-led"></div>
+          <div>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">AI Copilot Status</p>
+            <p class="text-xs text-white font-semibold">Online & Learning</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Floating Top Mobile Navigation -->
+    <header class="md:hidden glass-panel fixed top-2 left-2 right-2 h-14 px-4 flex items-center justify-between z-50">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyberPurple to-cyberCyan flex items-center justify-center shadow-md shadow-cyberPurple/25">
+          <i class="fa-solid fa-microchip text-white text-sm"></i>
+        </div>
+        <h2 class="font-bold text-xs tracking-wider text-white uppercase">AI-ITSM</h2>
+      </div>
+      <button onclick="toggleMobileNav()" class="w-9 h-9 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.08] flex items-center justify-center text-white">
+        <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-nav-overlay" class="fixed inset-0 bg-cyberBg/95 backdrop-blur-lg z-45 hidden flex-col justify-center items-center gap-6 text-xl font-bold transition-all">
+      <a href="#" onclick="switchTabMobile('home')" class="text-slate-400 hover:text-cyberCyan transition-all">Home</a>
+      <a href="#" onclick="switchTabMobile('about')" class="text-slate-400 hover:text-cyberCyan transition-all">About Me</a>
+      <a href="#" onclick="switchTabMobile('services')" class="text-slate-400 hover:text-cyberCyan transition-all">Services</a>
+      <a href="#" onclick="switchTabMobile('course')" class="text-slate-400 hover:text-cyberCyan transition-all text-amber-400 font-bold flex items-center gap-2"><i class="fa-solid fa-graduation-cap"></i> Service Desk Course & Exams</a>
+      <a href="#" onclick="switchTabMobile('ai-sandbox')" class="text-slate-400 hover:text-cyberCyan transition-all">AI Sandbox</a>
+      <a href="#" onclick="switchTabMobile('blog')" class="text-slate-400 hover:text-cyberCyan transition-all">Blog Hub</a>
+      <a href="#" onclick="switchTabMobile('forum')" class="text-slate-400 hover:text-cyberCyan transition-all">Forum Community</a>
+      <a href="#" onclick="switchTabMobile('youtube')" class="text-slate-400 hover:text-cyberCyan transition-all">YouTube Hub</a>
+      <a href="#" onclick="switchTabMobile('resources')" class="text-slate-400 hover:text-cyberCyan transition-all">Resources</a>
+      <a href="#" onclick="switchTabMobile('contact')" class="text-slate-400 hover:text-cyberCyan transition-all">Contact</a>
+    </div>
+
+    <!-- Main Viewport Space (Offset for Sidebar on desktop, topbar on mobile) -->
+    <main class="flex-1 md:pl-72 px-4 md:pr-4 pt-20 md:pt-[2.5vh] pb-10 min-h-screen w-full relative">
+
+      <!-- ==================== HOME PORTAL TAB ==================== -->
+      <section id="tab-home" class="tab-view block space-y-8 max-w-6xl mx-auto">
+        <!-- Hero Section -->
+        <div class="glass-panel p-6 md:p-12 relative overflow-hidden flex flex-col-reverse lg:flex-row items-center justify-between gap-8 bg-gradient-to-br from-cyberSlate to-cyberBg">
+          <div class="flex-1 space-y-6">
+            <span class="badge-neon"><i class="fa-solid fa-wand-magic-sparkles"></i> Transforming IT Operations</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+              Transforming IT <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyberCyan to-cyberPurple">Service Management</span> with AI
+            </h1>
+            <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-xl">
+              Welcome to the global hub for AI-driven ITSM and Enterprise Service Management. Led by Abhineet Singh, IT Operations Manager and ITSM/ESM Product Owner, we automate the routine to accelerate the business.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a href="#" onclick="switchTab('ai-sandbox')" class="cyber-btn"><i class="fa-solid fa-play"></i> Try AI Sandbox</a>
+              <a href="#" onclick="switchTab('contact')" class="cyber-btn-outline"><i class="fa-solid fa-calendar"></i> Book Consultation</a>
+            </div>
+            <!-- Dynamic Platform Statistics -->
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/[0.08]">
+              <div>
+                <p class="text-2xl md:text-3xl font-extrabold text-white font-mono">17+</p>
+                <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Years Experience</p>
+              </div>
+              <div>
+                <p class="text-2xl md:text-3xl font-extrabold text-cyberCyan font-mono">40%</p>
+                <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">MTTR Reduction</p>
+              </div>
+              <div>
+                <p class="text-2xl md:text-3xl font-extrabold text-cyberPurple font-mono">100%</p>
+                <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">AI Automated Triage</p>
+              </div>
+            </div>
+          </div>
+          <!-- Personal Image Wrapper with Glowing Cinematic Borders -->
+          <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden relative border border-white/[0.15] shadow-2xl shadow-cyberPurple/20 flex-shrink-0 group">
+            <div class="absolute inset-0 bg-gradient-to-t from-cyberBg via-transparent to-transparent opacity-80 z-10"></div>
+            <!-- Glowing Aura -->
+            <div class="absolute -inset-1 bg-gradient-to-tr from-cyberPurple via-cyberCyan to-cyberBlue rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+            <img src="assets/profile.jpg" alt="Abhineet Singh" class="w-full h-full object-cover relative z-0 transition duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+            <!-- Floating Badge overlay -->
+            <div class="absolute bottom-4 left-4 right-4 z-20 glass-panel p-3 border border-white/[0.1] rounded-xl flex items-center justify-between">
+              <div>
+                <p class="text-xs font-bold text-white leading-none">Abhineet Singh</p>
+                <p class="text-[9px] font-bold text-cyberCyan uppercase tracking-widest mt-1">IT Operations & Service Delivery Leader</p>
+              </div>
+              <div class="w-7 h-7 rounded-lg bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan">
+                <i class="fa-solid fa-user-shield text-xs"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Mock Operations Dashboard Section -->
+        <div class="glass-panel p-6 space-y-6">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-cyberCyan">Live-Updating Operations metrics</span>
+              <h2 class="text-2xl font-bold text-white mt-1">IT Operations Dashboard</h2>
+            </div>
+            <!-- Operations Filters -->
+            <div class="flex flex-wrap gap-2 bg-white/[0.03] border border-white/[0.05] p-1.5 rounded-xl">
+              <button onclick="updateDashboardMetrics('global')" id="dash-btn-global" class="dash-filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all text-white bg-cyberPurple shadow">Global Ops</button>
+              <button onclick="updateDashboardMetrics('bhc')" id="dash-btn-bhc" class="dash-filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">Insurance Operations</button>
+              <button onclick="updateDashboardMetrics('nhs')" id="dash-btn-nhs" class="dash-filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">Healthcare Support</button>
+              <button onclick="updateDashboardMetrics('caesars')" id="dash-btn-caesars" class="dash-filter-btn px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">Hospitality Support Hospitality</button>
+            </div>
+          </div>
+
+          <!-- Gauges / Visual Chart Containers -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- MTTR Gauge -->
+            <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-2xl flex flex-col items-center justify-center text-center space-y-3">
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Mean Time to Resolve (MTTR)</span>
+              <!-- Circle Gauge -->
+              <div class="relative w-36 h-36 flex items-center justify-center">
+                <svg class="w-full h-full transform -rotate-90">
+                  <circle cx="72" cy="72" r="58" class="stroke-slate-800" stroke-width="8" fill="transparent"></circle>
+                  <circle id="dash-mttr-circle" cx="72" cy="72" r="58" stroke="#7f00ff" stroke-width="8" fill="transparent" class="gauge-bar" stroke-dasharray="364.4" stroke-dashoffset="109.32"></circle>
+                </svg>
+                <div class="absolute flex flex-col items-center">
+                  <span id="dash-mttr-val" class="text-3xl font-mono font-bold text-white">45m</span>
+                  <span id="dash-mttr-change" class="text-[10px] font-bold text-cyberGreen"><i class="fa-solid fa-caret-down"></i> 40% improvement</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLA Compliance Gauge -->
+            <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-2xl flex flex-col items-center justify-center text-center space-y-3">
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide">SLA Compliance Rate</span>
+              <!-- Circle Gauge -->
+              <div class="relative w-36 h-36 flex items-center justify-center">
+                <svg class="w-full h-full transform -rotate-90">
+                  <circle cx="72" cy="72" r="58" class="stroke-slate-800" stroke-width="8" fill="transparent"></circle>
+                  <circle id="dash-sla-circle" cx="72" cy="72" r="58" stroke="#00f2fe" stroke-width="8" fill="transparent" class="gauge-bar" stroke-dasharray="364.4" stroke-dashoffset="7.288"></circle>
+                </svg>
+                <div class="absolute flex flex-col items-center">
+                  <span id="dash-sla-val" class="text-3xl font-mono font-bold text-white">98.2%</span>
+                  <span class="text-[10px] font-bold text-cyberCyan">ITIL Compliant</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- XLA Index Gauge -->
+            <div class="p-4 bg-white/[0.02] border border-white/[0.05] rounded-2xl flex flex-col items-center justify-center text-center space-y-3">
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Experience Index (XLA)</span>
+              <!-- Circle Gauge -->
+              <div class="relative w-36 h-36 flex items-center justify-center">
+                <svg class="w-full h-full transform -rotate-90">
+                  <circle cx="72" cy="72" r="58" class="stroke-slate-800" stroke-width="8" fill="transparent"></circle>
+                  <circle id="dash-xla-circle" cx="72" cy="72" r="58" stroke="#39ff14" stroke-width="8" fill="transparent" class="gauge-bar" stroke-dasharray="364.4" stroke-dashoffset="18.22"></circle>
+                </svg>
+                <div class="absolute flex flex-col items-center">
+                  <span id="dash-xla-val" class="text-3xl font-mono font-bold text-white">9.5/10</span>
+                  <span class="text-[10px] font-bold text-cyberGreen">Excellent Sentiment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom detailed bar chart metric -->
+          <div class="p-5 bg-white/[0.01] border border-white/[0.04] rounded-2xl space-y-4">
+            <div class="flex justify-between items-center text-xs font-bold text-slate-400">
+              <span class="uppercase tracking-wider">Operational Volume Metrics & Backlog</span>
+              <span id="dash-vol-label" class="text-cyberCyan font-mono">1,482 Active Tickets</span>
+            </div>
+            <!-- Animated progress lines -->
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-[11px] font-bold text-slate-300 mb-1">
+                  <span>Auto-Routed via AI Triage</span>
+                  <span id="dash-p-ai">85%</span>
+                </div>
+                <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div id="dash-bar-ai" class="h-full bg-gradient-to-r from-cyberPurple to-cyberCyan transition-all duration-1000" style="width: 85%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between text-[11px] font-bold text-slate-300 mb-1">
+                  <span>First Contact Resolution (FCR)</span>
+                  <span id="dash-p-fcr">76%</span>
+                </div>
+                <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div id="dash-bar-fcr" class="h-full bg-gradient-to-r from-cyberBlue to-cyberCyan transition-all duration-1000" style="width: 76%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Preview Section (Cards Grid) -->
+        <div class="space-y-6">
+          <div class="flex justify-between items-end">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-cyberCyan">Tailored Enterprise offerings</span>
+              <h2 class="text-3xl font-bold text-white mt-1">Consulting Offerings</h2>
+            </div>
+            <a href="#" onclick="switchTab('services')" class="text-xs font-bold text-cyberCyan hover:underline">View All <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="glass-panel p-6 space-y-4 relative overflow-hidden group hover:border-cyberCyan/30">
+              <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan text-xl group-hover:scale-110 transition duration-300">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyberCyan transition duration-300">AI in Service Desk</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Seamlessly implement NLP models, CTI auto-classification, and custom LLM copilots that reduce incident triage duration to milliseconds and slash MTTR.
+              </p>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass-panel p-6 space-y-4 relative overflow-hidden group hover:border-cyberPurple/30">
+              <div class="w-12 h-12 rounded-xl bg-cyberPurple/10 border border-cyberPurple/30 flex items-center justify-center text-cyberPurple text-xl group-hover:scale-110 transition duration-300">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyberPurple transition duration-300">ESM Platform Consulting</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Complete platform configuration, custom ITIL workflow mapping, asset management, and seamless enterprise catalog creation.
+              </p>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass-panel p-6 space-y-4 relative overflow-hidden group hover:border-cyberBlue/30">
+              <div class="w-12 h-12 rounded-xl bg-cyberBlue/10 border border-cyberBlue/30 flex items-center justify-center text-cyberBlue text-xl group-hover:scale-110 transition duration-300">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-cyberBlue transition duration-300">KPI & Reporting (Power BI)</h3>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Build high-impact, real-time executive operations dashboards combining metrics from ServiceNow, Enterprise ESM, and active server log monitoring streams.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== ABOUT ME TAB ==================== -->
+      <section id="tab-about" class="tab-view hidden space-y-8 max-w-4xl mx-auto">
+        <div class="glass-panel p-8 space-y-6">
+          <h2 class="text-3xl font-bold text-white border-b border-white/[0.08] pb-4">My Professional Story</h2>
+          <div class="space-y-4 text-slate-300 text-sm leading-relaxed">
+            <p>
+              I am a strategic and highly resilient IT Service Management (ITSM) professional with over **17 years of experience** leading complex global IT support operations. Throughout my career, I have specialized in **Major Incident Management, Problem Management, and Service Delivery**, managing large-scale critical outages and helping organizations stabilize their environments.
+            </p>
+            <p>
+              My journey is deeply rooted in modernizing legacy environments. With the advent of advanced AI operations, I have championed the transition from cold, process-driven **SLAs** to human-centered **XLAs (Experience Level Agreements)**, utilizing **ServiceNow** and **Enterprise ESM** platforms to design self-service and auto-triage workflows that remove operational waste.
+            </p>
+            <p>
+              Currently, I serve as the IT Operations Manager at Global Specialty Insurance Firm (Insurance Operations) in London, and have served as IT Service Desk Manager within Lloyd's Market (Global Lloyd's Syndicate) and Healthcare IT healthcare environments. I hold certifications in **ITIL v3 Foundation, ITIL v4 training, and Project Management Professional (PMP)**.
+            </p>
+          </div>
+
+          <!-- Academic and Certifications Badge Grid -->
+          <div class="pt-6 border-t border-white/[0.08] space-y-3">
+            <h3 class="text-lg font-bold text-white">Certifications & Credentials</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="badge-neon"><i class="fa-solid fa-certificate"></i> PMP Certified (Dec 2027)</span>
+              <span class="badge-neon"><i class="fa-solid fa-stamp"></i> ITIL V3 Foundation Certified</span>
+              <span class="badge-neon"><i class="fa-solid fa-stamp"></i> ITIL V4 Trained</span>
+              <span class="badge-neon"><i class="fa-solid fa-award"></i> Service Desk Manager (SDM) — SDI UK (2025)</span>
+              <span class="badge-neon"><i class="fa-solid fa-graduation-cap"></i> B.Sc. in IT & Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Vertical Experience Timeline -->
+        <div class="glass-panel p-8 space-y-6">
+          <h3 class="text-2xl font-bold text-white">Professional Journey</h3>
+          <div class="relative border-l-2 border-slate-800 ml-3 space-y-8">
+            <!-- Timeline Item 1 -->
+            <div class="relative pl-8 timeline-dot">
+              <span class="text-[10px] font-bold text-cyberCyan uppercase tracking-widest">March 2023 – Present</span>
+              <h4 class="text-lg font-bold text-white mt-1">IT Operations Manager</h4>
+              <p class="text-xs text-cyberPurple font-semibold">Global Specialty Insurance Firm (London, UK)</p>
+              <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                Oversee global Major Incident resolution, build executive-level interactive Power BI dashboards, champion proactive Problem Management, and establish high-reputation XLA frameworks via ServiceNow.
+              </p>
+            </div>
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-8 timeline-dot">
+              <span class="text-[10px] font-bold text-cyberCyan uppercase tracking-widest">March 2016 – March 2023</span>
+              <h4 class="text-lg font-bold text-white mt-1">IT Service Desk Manager</h4>
+              <p class="text-xs text-cyberPurple font-semibold">Global Lloyd's Syndicate (London, UK)</p>
+              <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                Managed end-to-end incident lifecycles, improved FCR, established new support teams during high-stakes corporate mergers, and successfully rolled out Intune endpoint migrations with zero service downtime.
+              </p>
+            </div>
+            <!-- Timeline Item 3 -->
+            <div class="relative pl-8 timeline-dot">
+              <span class="text-[10px] font-bold text-cyberCyan uppercase tracking-widest">March 2009 – March 2016</span>
+              <h4 class="text-lg font-bold text-white mt-1">Team Lead Infrastructure (Major Incidents)</h4>
+              <p class="text-xs text-cyberPurple font-semibold">Global IT Consulting Firm — Client: Leading Hospitality Group</p>
+              <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                Chaired the CAB, managed third-party vendor SLAs, and owned Major Incident bridge coordination for a 24x7 global service desk in the high-demand hospitality industry.
+              </p>
+            </div>
+            <!-- Timeline Item 4 -->
+            <div class="relative pl-8 timeline-dot">
+              <span class="text-[10px] font-bold text-cyberCyan uppercase tracking-widest">March 2005 – March 2009</span>
+              <h4 class="text-lg font-bold text-white mt-1">System Analyst, NOC Operations</h4>
+              <p class="text-xs text-cyberPurple font-semibold">Global IT Consulting Firm — Client: Tier-1 ISP</p>
+              <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                Facilitated high-pressure bridge calls during datacenter outages and conducted 24x7 monitoring (Netcool, Big Brother) to catch service impacts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SERVICES TAB ==================== -->
+      <section id="tab-services" class="tab-view hidden space-y-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-xl mx-auto space-y-2 mb-4">
+          <span class="badge-neon">Consulting Catalog</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white">ITSM Consulting & Automation</h2>
+          <p class="text-slate-400 text-xs">Modern solutions engineered to accelerate service speed, eliminate operational waste, and drive executive value.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="glass-panel p-6 space-y-4 group hover:border-cyberCyan/30 transition">
+            <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan text-xl"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="text-lg font-bold text-white">AI in Service Desk</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Deploy customized Natural Language Processing classifiers, automatic 3-Tier CTI routing paths, and LLM-grounded search capabilities to reduce MTTR and automate triage processes.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass-panel p-6 space-y-4 group hover:border-cyberPurple/30 transition">
+            <div class="w-12 h-12 rounded-xl bg-cyberPurple/10 border border-cyberPurple/30 flex items-center justify-center text-cyberPurple text-xl"><i class="fa-solid fa-circle-nodes"></i></div>
+            <h3 class="text-lg font-bold text-white">ESM Platform Consulting</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">From initial asset design to custom workflow mapping, API integrations, and catalog customization, get the maximum value from your Enterprise ESM platform.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass-panel p-6 space-y-4 group hover:border-cyberBlue/30 transition">
+            <div class="w-12 h-12 rounded-xl bg-cyberBlue/10 border border-cyberBlue/30 flex items-center justify-center text-cyberBlue text-xl"><i class="fa-solid fa-chart-pie"></i></div>
+            <h3 class="text-lg font-bold text-white">Power BI Dashboarding</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Connect your help desk systems, monitoring streams, and network logs to build clean, real-time executive operations dashboards that tell a true operational story.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="glass-panel p-6 space-y-4 group hover:border-cyberCyan/30 transition">
+            <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan text-xl"><i class="fa-solid fa-route"></i></div>
+            <h3 class="text-lg font-bold text-white">ITIL Process Design</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Establish robust Incident, Problem, Change, and Release Management frameworks in alignment with ITIL 4 best practices, custom-tailored to your industry.</p>
+          </div>
+          <!-- Card 5 -->
+          <div class="glass-panel p-6 space-y-4 group hover:border-cyberPurple/30 transition">
+            <div class="w-12 h-12 rounded-xl bg-cyberPurple/10 border border-cyberPurple/30 flex items-center justify-center text-cyberPurple text-xl"><i class="fa-solid fa-microchip"></i></div>
+            <h3 class="text-lg font-bold text-white">Workflow Automation</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Automate repetitive Level 1 engineer tasks like active password resets, access requests, and license provisioning via API connections to Intune and AD.</p>
+          </div>
+          <!-- Card 6 -->
+          <div class="glass-panel p-6 space-y-4 group hover:border-cyberBlue/30 transition">
+            <div class="w-12 h-12 rounded-xl bg-cyberBlue/10 border border-cyberBlue/30 flex items-center justify-center text-cyberBlue text-xl"><i class="fa-solid fa-database"></i></div>
+            <h3 class="text-lg font-bold text-white">CMDB Optimization</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Establish discovery boundaries and asset dependency mapping rules to keep your CMDB database clean, ensuring high-accuracy ticket dispatching.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== AI SANDBOX TAB ==================== -->
+      <section id="tab-ai-sandbox" class="tab-view hidden space-y-8 max-w-5xl mx-auto">
+        <div class="glass-panel p-6 md:p-8 space-y-6">
+          <div>
+            <span class="badge-neon"><i class="fa-solid fa-terminal animate-pulse"></i> Interactive AI Tools Sandbox</span>
+            <h2 class="text-3xl font-bold text-white mt-2">ITSM AI Tools Sandbox</h2>
+            <p class="text-slate-400 text-xs mt-1">Test the power of local IT operations AI. These tools simulate actual automated logic used in enterprise environments.</p>
+          </div>
+
+          <!-- Tab Selection within Sandbox -->
+          <div class="flex border-b border-slate-800 flex-wrap">
+            <button onclick="switchSandboxTool('summarizer')" id="btn-sb-summarizer" class="px-6 py-3 text-sm font-bold border-b-2 border-cyberCyan text-cyberCyan transition-all">AI Ticket Summarizer</button>
+            <button onclick="switchSandboxTool('categorizer')" id="btn-sb-categorizer" class="px-6 py-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition-all">AI CTI Auto-Categorizer</button>
+            <button onclick="switchSandboxTool('sentiment')" id="btn-sb-sentiment" class="px-6 py-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition-all">AI XLA Sentiment Analyzer</button>
+            <button onclick="switchSandboxTool('rca')" id="btn-sb-rca" class="px-6 py-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition-all">AI Root Cause Analyzer</button>
+            <button onclick="switchSandboxTool('predictor')" id="btn-sb-predictor" class="px-6 py-3 text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition-all">AI Predictive Analytics Engine</button>
+          </div>
+
+          <!-- Tool 1: AI Ticket Summarizer -->
+          <div id="sandbox-summarizer" class="sandbox-tool-view space-y-4">
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Paste a messy, long support ticket or employee conversation thread below. The local AI will extract the key issues and output a clean summary.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">Input Messy Ticket / Thread:</label>
+                <textarea id="sb-sum-input" rows="8" class="cyber-input font-mono text-xs leading-relaxed" placeholder="Type or paste messy ticket details..."></textarea>
+                <!-- Quick Autofill template buttons -->
+                <div class="flex flex-wrap gap-2">
+                  <button onclick="autofillSummarizer('pc')" class="px-3 py-1 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-[10px] font-bold rounded-lg text-slate-300"><i class="fa-solid fa-keyboard text-[9px] text-cyberCyan"></i> Outlook Crash</button>
+                  <button onclick="autofillSummarizer('server')" class="px-3 py-1 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-[10px] font-bold rounded-lg text-slate-300"><i class="fa-solid fa-server text-[9px] text-cyberPurple"></i> Database Outage</button>
+                  <button onclick="autofillSummarizer('nhs')" class="px-3 py-1 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-[10px] font-bold rounded-lg text-slate-300"><i class="fa-solid fa-hospital text-[9px] text-red-400"></i> Smartcard Outage (NHS)</button>
+                  <!-- Excel Triage presets -->
+                  <button onclick="autofillSummarizer('ricoh')" class="px-3 py-1 bg-cyberCyan/10 hover:bg-cyberCyan/20 border border-cyberCyan/30 text-[10px] font-bold rounded-lg text-cyberCyan"><i class="fa-solid fa-print text-[9px]"></i> Ricoh Toner (Triage Sheet)</button>
+                  <button onclick="autofillSummarizer('power')" class="px-3 py-1 bg-cyberPurple/10 hover:bg-cyberPurple/20 border border-cyberPurple/30 text-[10px] font-bold rounded-lg text-cyberPurple"><i class="fa-solid fa-gears text-[9px]"></i> Power Automate (Triage Sheet)</button>
+                  <button onclick="autofillSummarizer('spam')" class="px-3 py-1 bg-cyberBlue/10 hover:bg-cyberBlue/20 border border-cyberBlue/30 text-[10px] font-bold rounded-lg text-cyberBlue"><i class="fa-solid fa-shield-virus text-[9px]"></i> Phishing Check (Triage Sheet)</button>
+                  <button onclick="autofillSummarizer('emis')" class="px-3 py-1 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-[10px] font-bold rounded-lg text-red-400"><i class="fa-solid fa-notes-medical text-[9px]"></i> EMIS Care Plan (Triage Sheet)</button>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">AI Bulleted Summary Output:</label>
+                <div class="cyber-input font-mono text-xs leading-relaxed h-[202px] overflow-y-auto bg-black/40 border-slate-800 select-all relative">
+                  <div id="sb-sum-output" class="text-slate-300">
+                    <span class="text-slate-500 italic">Click "Run AI Summary" to generate output...</span>
+                  </div>
+                  <!-- Glowing active badge inside text area -->
+                  <div id="sb-sum-badge" class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-cyberCyan/15 border border-cyberCyan/30 text-[9px] font-bold text-cyberCyan hidden">AI Grounded</div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-end pt-2">
+              <button onclick="runTicketSummarizer()" class="cyber-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Run AI Summary</button>
+            </div>
+          </div>
+
+          <!-- Tool 2: AI CTI Categorizer -->
+          <div id="sandbox-categorizer" class="sandbox-tool-view hidden space-y-4">
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Enter an active incident description below. The NLP routing engine will parse the text and apply a clean, standardized 3-Tier CTI (Category > Type > Item) tag.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">Enter Support Description:</label>
+                <textarea id="sb-cat-input" rows="6" class="cyber-input font-mono text-xs leading-relaxed" placeholder="Type or paste support description here...">My laptop screen has black lines across it and the charger is getting extremely hot.</textarea>
+                <!-- Quick Autofill template buttons -->
+                <div class="flex gap-2 mt-2">
+                  <button onclick="autofillCategorizer('printer')" class="px-3 py-1 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-[10px] font-bold rounded-lg text-slate-300">Load Printer Issue</button>
+                  <button onclick="autofillCategorizer('vpn')" class="px-3 py-1 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-[10px] font-bold rounded-lg text-slate-300">Load VPN Failure</button>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">AI Categorization Trace:</label>
+                <div class="p-4 bg-black/40 border border-slate-800 rounded-xl space-y-3 font-mono text-xs">
+                  <div class="flex justify-between border-b border-white/[0.05] pb-2 text-[10px] text-slate-500">
+                    <span>NLP Tagging Trace</span>
+                    <div class="flex gap-3">
+                      <span id="sb-cat-confidence" class="text-cyberPurple font-bold">--% Conf.</span>
+                      <span id="sb-cat-time" class="text-cyberCyan">-- ms</span>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-3 gap-2">
+                    <div class="p-2 bg-white/[0.02] border border-white/[0.05] rounded-lg">
+                      <p class="text-[9px] text-slate-500 uppercase tracking-wider">Category</p>
+                      <p id="sb-res-cat" class="text-xs font-bold text-white mt-0.5">--</p>
+                    </div>
+                    <div class="p-2 bg-white/[0.02] border border-white/[0.05] rounded-lg">
+                      <p class="text-[9px] text-slate-500 uppercase tracking-wider">Type</p>
+                      <p id="sb-res-type" class="text-xs font-bold text-white mt-0.5">--</p>
+                    </div>
+                    <div class="p-2 bg-white/[0.02] border border-white/[0.05] rounded-lg">
+                      <p class="text-[9px] text-slate-500 uppercase tracking-wider">Item</p>
+                      <p id="sb-res-item" class="text-xs font-bold text-white mt-0.5">--</p>
+                    </div>
+                  </div>
+                  <div class="p-2.5 bg-cyberGreen/10 border border-cyberGreen/20 rounded-lg flex justify-between items-center hidden" id="sb-cat-route-box">
+                    <div>
+                      <p class="text-[9px] text-cyberGreen uppercase tracking-wider font-bold">Auto-Routed Resolver Group</p>
+                      <p id="sb-res-group" class="text-xs font-bold text-white mt-0.5">--</p>
+                    </div>
+                    <span class="text-cyberGreen text-base"><i class="fa-solid fa-circle-check"></i></span>
+                  </div>
+                  
+                  <!-- Integrations Webhook payload inspect -->
+                  <div class="border-t border-white/[0.05] pt-3 hidden" id="sb-cat-webhook-box">
+                    <div class="flex justify-between items-center mb-1.5 text-[9px] text-slate-500">
+                      <span class="uppercase tracking-wider font-bold text-cyberPurple"><i class="fa-solid fa-code text-[10px]"></i> ServiceNow REST JSON Payload</span>
+                      <button onclick="copyCTIWebhookPayload()" class="text-cyberCyan hover:text-white transition duration-300 flex items-center gap-1 font-mono uppercase text-[8px]"><i class="fa-solid fa-copy"></i> Copy Payload</button>
+                    </div>
+                    <pre id="sb-cat-webhook-json" class="p-2 bg-black/60 border border-white/[0.04] rounded-lg text-[9px] text-cyberGreen overflow-x-auto select-all max-h-24 leading-normal font-mono"></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-end pt-2">
+              <button onclick="runCTICategorizer()" class="cyber-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Classify Incident</button>
+            </div>
+          </div>
+
+          <!-- Tool 3: AI XLA Sentiment Analyzer -->
+          <div id="sandbox-sentiment" class="sandbox-tool-view hidden space-y-4">
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Enter user feedback or support experience sentiment below. The AI will calculate the XLA Experience Rating, identify operational friction points, and suggest proactive remediation actions.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">User Experience Feedback:</label>
+                <textarea id="sb-sent-input" rows="6" class="cyber-input font-mono text-xs leading-relaxed" placeholder="Type or paste customer feedback..."></textarea>
+                <!-- Quick Autofill template buttons -->
+                <div class="flex gap-2 mt-2">
+                  <button onclick="autofillSentiment('angry')" class="px-3 py-1 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-[10px] font-bold rounded-lg text-slate-300">Load Stressed User</button>
+                  <button onclick="autofillSentiment('happy')" class="px-3 py-1 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-[10px] font-bold rounded-lg text-slate-300">Load Satisfied User</button>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">XLA Sentiment Metrics:</label>
+                <div class="p-4 bg-black/40 border border-slate-800 rounded-xl space-y-4 font-mono text-xs relative">
+                  <!-- Dynamic Gauge Indicator -->
+                  <div class="space-y-2 border-b border-white/[0.05] pb-3">
+                    <div class="flex justify-between items-center">
+                      <span class="text-[10px] text-slate-500">Employee Experience Score</span>
+                      <span id="sb-sent-score" class="font-bold text-slate-400">--</span>
+                    </div>
+                    <!-- Glowing CSS Slider Gauge -->
+                    <div class="space-y-1" id="sb-sent-gauge-box">
+                      <div class="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden relative border border-white/[0.04] p-[1px]">
+                        <!-- Glowing track background gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500 via-amber-500 to-cyberGreen opacity-30"></div>
+                        <!-- Glowing sliding cursor -->
+                        <div id="sb-sent-gauge-pin" class="absolute top-0 bottom-0 w-3 bg-white border border-white rounded-full shadow-[0_0_8px_#fff] transition-all duration-700 ease-out" style="left: 0%;"></div>
+                      </div>
+                      <div class="flex justify-between text-[7px] text-slate-500 uppercase tracking-widest font-mono">
+                        <span>1.0 (Critical Friction)</span>
+                        <span>5.0 (Neutral)</span>
+                        <span>10.0 (Frictionless)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Colored sentiment badge -->
+                  <div class="flex justify-between items-center">
+                    <span class="text-[10px] text-slate-400">Sentiment Classification:</span>
+                    <span id="sb-sent-badge" class="px-2.5 py-0.5 rounded-lg text-[10px] font-bold text-slate-400 bg-white/[0.05] border border-white/[0.08] uppercase">--</span>
+                  </div>
+                  <!-- Identified Friction -->
+                  <div class="space-y-1">
+                    <p class="text-[9px] text-slate-500 uppercase tracking-wider">Identified Friction Points</p>
+                    <p id="sb-sent-friction" class="text-xs text-white font-bold">--</p>
+                  </div>
+                  <!-- User Emotion & Context Analysis -->
+                  <div class="space-y-1">
+                    <p class="text-[9px] text-slate-500 uppercase tracking-wider">User Emotion & Context</p>
+                    <p id="sb-sent-emotion" class="text-xs text-cyberCyan font-bold">--</p>
+                  </div>
+                  <!-- Remediation Plan -->
+                  <div class="p-2.5 bg-cyberPurple/10 border border-cyberPurple/20 rounded-lg hidden" id="sb-sent-remed-box">
+                    <p class="text-[9px] text-cyberCyan uppercase tracking-wider font-bold"><i class="fa-solid fa-wand-magic-sparkles"></i> Proactive AI Recommendation</p>
+                    <p id="sb-sent-remed" class="text-[11px] text-slate-300 mt-1 leading-relaxed">--</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-end pt-2">
+              <button onclick="runSentimentAnalyzer()" class="cyber-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Analyze XLA Sentiment</button>
+            </div>
+          </div>
+
+          <!-- Tool 4: AI Root Cause Analyzer -->
+          <div id="sandbox-rca" class="sandbox-tool-view hidden space-y-4">
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Select a critical P1 outage scenario below. The AI Root Cause Analyzer will run a mock diagnostic scan of infrastructure logs and compile a formal ITIL RCA report.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">Select Outage Scenario:</label>
+                <select id="sb-rca-scenario" class="cyber-input text-xs font-mono">
+                  <option value="sso">Active Directory SSO System Lockout (Global Impact)</option>
+                  <option value="payment">Finance Ledger Gateway Transaction Outage</option>
+                  <option value="email">Enterprise Exchange Mail Synchronisation Outage</option>
+                </select>
+                
+                <div class="py-1 flex items-center gap-2">
+                  <span class="h-px bg-slate-800 flex-grow"></span>
+                  <span class="text-[9px] font-bold text-slate-600 uppercase tracking-widest">OR</span>
+                  <span class="h-px bg-slate-800 flex-grow"></span>
+                </div>
+                
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">Type Custom Outage Details (Optional):</label>
+                <textarea id="sb-rca-custom" rows="3" class="cyber-input font-mono text-xs leading-relaxed" placeholder="Type custom outage symptoms (e.g. EMIS Smartcard login reader, FortiClient VPN authentication, production SQL database locks...)"></textarea>
+                
+                <!-- Terminal Diagnostic Logs Screen -->
+                <div class="mt-2 p-4 bg-black/80 border border-slate-800 rounded-xl h-28 overflow-y-auto font-mono text-[10px] text-cyberGreen leading-relaxed space-y-1 relative" id="sb-rca-logs">
+                  <p class="text-slate-500 italic">Select scenario or enter custom text and click "Generate RCA" to initiate infrastructure trace...</p>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">Formal ITIL RCA Report:</label>
+                <div class="cyber-input font-mono text-xs leading-relaxed h-[240px] overflow-y-auto bg-black/40 border-slate-800 select-all relative p-4" id="sb-rca-output-box">
+                  <div id="sb-rca-output" class="text-slate-400 space-y-4">
+                    <span class="text-slate-500 italic">Awaiting diagnostic scan...</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-end pt-2">
+              <button onclick="runRCAGenerator()" class="cyber-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate RCA Report</button>
+            </div>
+          </div>
+
+          <!-- Tool 5: AI Predictive Analytics Engine -->
+          <div id="sandbox-predictor" class="sandbox-tool-view hidden space-y-4">
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Forecast upcoming ticket storms and call volumes based on 3 years of historical organizational baseline data.
+            </p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div class="space-y-4 lg:col-span-1">
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">Select Forecast Range:</label>
+                  <select id="sb-pred-range" class="cyber-input text-xs font-mono w-full">
+                    <option value="next_hour">Next Hour Prediction (Real-Time Load)</option>
+                    <option value="next_day">Next Day Prediction (24h Baseline)</option>
+                    <option value="next_week">Next Week Prediction (Weekly Baseline)</option>
+                  </select>
+                </div>
+                
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">Simulate Current Condition:</label>
+                  <div class="flex flex-wrap gap-2">
+                    <button onclick="runPredictor('normal')" class="cyber-btn-outline flex-1"><i class="fa-solid fa-cloud-sun text-cyberCyan"></i> Normal Ops</button>
+                    <button onclick="runPredictor('p1_storm')" class="cyber-btn-outline flex-1"><i class="fa-solid fa-cloud-bolt text-red-500"></i> P1 Storm Event</button>
+                    <button onclick="runPredictor('monday_rush')" class="cyber-btn-outline flex-1"><i class="fa-solid fa-users text-yellow-500"></i> Monday AM Rush</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Output Box -->
+              <div class="relative bg-cyberSlate rounded-xl border border-white/[0.05] p-5 font-mono text-sm shadow-xl min-h-[250px] flex flex-col justify-center lg:col-span-2 overflow-x-auto">
+                <div class="absolute top-3 right-3 flex items-center gap-2">
+                  <span id="sb-pred-badge" class="px-2 py-0.5 rounded bg-cyberPurple/20 border border-cyberPurple text-cyberPurple text-[9px] font-bold hidden uppercase">FORECAST COMPUTED</span>
+                </div>
+                <div id="sb-pred-output" class="text-slate-500 text-center">
+                  <i class="fa-solid fa-chart-line text-2xl mb-2 block"></i>
+                  Awaiting forecasting parameters...
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== BLOG HUB TAB ==================== -->
+      <section id="tab-blog" class="tab-view hidden space-y-8 max-w-6xl mx-auto">
+        <!-- Search and Filter Header -->
+        <div class="glass-panel p-6 flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div class="w-full md:w-80 relative">
+            <input type="text" id="blog-search-input" onkeyup="filterBlogs()" class="cyber-input pl-10" placeholder="Search blog articles...">
+            <span class="absolute left-4 top-3.5 text-slate-500"><i class="fa-solid fa-search"></i></span>
+          </div>
+          <!-- Blog Categories -->
+          <div class="flex flex-wrap gap-2 justify-center" id="blog-category-filters">
+            <button onclick="filterBlogCategory('All')" class="blog-cat-btn px-4 py-2 rounded-lg text-xs font-bold border border-cyberCyan bg-cyberCyan/10 text-cyberCyan">All Topics</button>
+            <button onclick="filterBlogCategory('AI in ITSM')" class="blog-cat-btn px-4 py-2 rounded-lg text-xs font-bold border border-white/[0.08] hover:border-cyberCyan text-slate-400 hover:text-white">AI in ITSM</button>
+            <button onclick="filterBlogCategory('Service Desk KPIs')" class="blog-cat-btn px-4 py-2 rounded-lg text-xs font-bold border border-white/[0.08] hover:border-cyberCyan text-slate-400 hover:text-white">Service Desk KPIs</button>
+            <button onclick="filterBlogCategory('Tool Comparisons')" class="blog-cat-btn px-4 py-2 rounded-lg text-xs font-bold border border-white/[0.08] hover:border-cyberCyan text-slate-400 hover:text-white">Tool Comparisons</button>
+          </div>
+        </div>
+
+        <!-- Blog Articles Grid -->
+        <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamically Populated by script.js -->
+        </div>
+
+        <!-- Pagination Indicator -->
+        <div class="flex justify-between items-center border-t border-white/[0.08] pt-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+          <span id="blog-count-label">Showing -- of -- articles</span>
+          <div class="flex gap-2">
+            <button class="px-3 py-1.5 bg-white/[0.03] border border-white/[0.05] rounded disabled:opacity-50" disabled>Prev</button>
+            <button class="px-3 py-1.5 bg-white/[0.03] border border-white/[0.05] rounded disabled:opacity-50" disabled>Next</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== FORUM TAB ==================== -->
+      <section id="tab-forum" class="tab-view hidden space-y-8 max-w-6xl mx-auto">
+        <!-- Forum Board Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Forum Left: Main Discussion Area -->
+          <div class="lg:col-span-2 space-y-6">
+            <!-- Search and category bar -->
+            <div class="glass-panel p-4 flex gap-4 items-center">
+              <div class="flex-1 relative">
+                <input type="text" id="forum-search-input" onkeyup="filterForumTopics()" class="cyber-input pl-10 text-xs" placeholder="Search discussions...">
+                <span class="absolute left-4 top-3 text-slate-500"><i class="fa-solid fa-search text-xs"></i></span>
+              </div>
+              <button onclick="openCreateTopicModal()" class="cyber-btn py-2.5 px-4 text-xs shrink-0"><i class="fa-solid fa-plus"></i> New Topic</button>
+            </div>
+
+            <!-- Discussion list container -->
+            <div class="glass-panel overflow-hidden">
+              <div class="p-4 border-b border-white/[0.08] flex justify-between items-center bg-white/[0.01]">
+                <h3 class="font-bold text-sm text-white uppercase tracking-wider">Active Discussions</h3>
+                <span class="text-xs text-cyberCyan font-bold" id="forum-topic-count">-- Topics</span>
+              </div>
+              <!-- Discussions List -->
+              <div class="divide-y divide-white/[0.05]" id="forum-topics-list">
+                <!-- Dynamically Populated by script.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Forum Right: Categories & Stats -->
+          <div class="space-y-6">
+            <!-- Categories Card -->
+            <div class="glass-panel p-6 space-y-4">
+              <h3 class="font-bold text-sm text-white border-b border-white/[0.08] pb-3 uppercase tracking-wider">Categories</h3>
+              <div class="space-y-1">
+                <button onclick="filterForumCategory('All')" class="forum-cat-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex justify-between items-center bg-cyberCyan/10 text-cyberCyan border border-cyberCyan/20">
+                  <span><i class="fa-solid fa-list-check w-5"></i> All Forums</span>
+                  <span class="px-2 py-0.5 bg-cyberCyan/15 rounded text-[10px]">10</span>
+                </button>
+                <button onclick="filterForumCategory('Tool Comparisons')" class="forum-cat-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex justify-between items-center text-slate-400 hover:text-white hover:bg-white/[0.02]">
+                  <span><i class="fa-solid fa-balance-scale w-5"></i> Tool Comparisons</span>
+                  <span class="px-2 py-0.5 bg-white/[0.05] rounded text-[10px]">3</span>
+                </button>
+                <button onclick="filterForumCategory('AI Service Desk Automation')" class="forum-cat-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex justify-between items-center text-slate-400 hover:text-white hover:bg-white/[0.02]">
+                  <span><i class="fa-solid fa-robot w-5"></i> AI Automation</span>
+                  <span class="px-2 py-0.5 bg-white/[0.05] rounded text-[10px]">3</span>
+                </button>
+                <button onclick="filterForumCategory('Incident Management')" class="forum-cat-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex justify-between items-center text-slate-400 hover:text-white hover:bg-white/[0.02]">
+                  <span><i class="fa-solid fa-triangle-exclamation w-5"></i> Incident Management</span>
+                  <span class="px-2 py-0.5 bg-white/[0.05] rounded text-[10px]">2</span>
+                </button>
+                <button onclick="filterForumCategory('Healthcare IT')" class="forum-cat-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex justify-between items-center text-slate-400 hover:text-white hover:bg-white/[0.02]">
+                  <span><i class="fa-solid fa-hospital w-5"></i> Clinical IT Support</span>
+                  <span class="px-2 py-0.5 bg-white/[0.05] rounded text-[10px]">1</span>
+                </button>
+                <button onclick="filterForumCategory('ITIL & Process Design')" class="forum-cat-btn w-full text-left px-3 py-2 rounded-lg text-xs font-semibold flex justify-between items-center text-slate-400 hover:text-white hover:bg-white/[0.02]">
+                  <span><i class="fa-solid fa-network-wired w-5"></i> ITIL & Processes</span>
+                  <span class="px-2 py-0.5 bg-white/[0.05] rounded text-[10px]">1</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Stats Card -->
+            <div class="glass-panel p-6 space-y-4">
+              <h3 class="font-bold text-sm text-white border-b border-white/[0.08] pb-3 uppercase tracking-wider">Forum Stats</h3>
+              <div class="grid grid-cols-2 gap-4 text-center font-mono">
+                <div class="p-3 bg-white/[0.02] border border-white/[0.05] rounded-xl">
+                  <p class="text-xl font-bold text-white">30</p>
+                  <p class="text-[9px] text-slate-500 uppercase tracking-widest font-bold mt-1">Users</p>
+                </div>
+                <div class="p-3 bg-white/[0.02] border border-white/[0.05] rounded-xl">
+                  <p class="text-xl font-bold text-cyberCyan">10</p>
+                  <p class="text-[9px] text-slate-500 uppercase tracking-widest font-bold mt-1">Threads</p>
+                </div>
+              </div>
+              <div class="pt-2">
+                <h4 class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wide">Featured Member</h4>
+                <div class="flex items-center gap-3 p-2 bg-white/[0.02] border border-white/[0.05] rounded-xl">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 to-violet-700 flex items-center justify-center font-mono font-bold text-xs text-white">AS</div>
+                  <div>
+                    <p class="text-xs font-bold text-white">Abhineet Singh</p>
+                    <p class="text-[9px] text-cyberCyan font-bold uppercase mt-0.5">Platform Owner • 5000 XP</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==================== YOUTUBE TAB ==================== -->
+      <section id="tab-youtube" class="tab-view hidden space-y-8 max-w-5xl mx-auto">
+        <div class="glass-panel p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-br from-cyberSlate to-cyberBg">
+          <div class="space-y-4 flex-1">
+            <span class="badge-neon"><i class="fa-brands fa-youtube text-red-500 animate-pulse"></i> Featured Content Creator</span>
+            <h2 class="text-3xl font-bold text-white">The AI-Driven IT Manager</h2>
+            <p class="text-slate-300 text-xs leading-relaxed max-w-xl">
+              Subscribe for practical, cutting-edge advice on ITSM processes, ITIL 4 frameworks, AI operations, and hands-on tool comparisons designed to help IT teams work smarter, not harder.
+            </p>
+            <div class="pt-2">
+              <a href="https://www.youtube.com/results?search_query=The+AI+Driven+IT+Manager" target="_blank" class="cyber-btn bg-red-600 hover:bg-red-700 shadow-red-600/20"><i class="fa-brands fa-youtube"></i> Subscribe Now</a>
+            </div>
+          </div>
+          <div class="w-64 h-36 border border-white/[0.08] rounded-xl overflow-hidden shadow-2xl shrink-0 bg-slate-900 relative">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=500&q=80')"></div>
+            <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+              <span class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center text-white text-lg shadow-lg"><i class="fa-solid fa-play ml-1"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Videos Carousel / Grid -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-3">Latest Production Scripts & Uploads</h3>
+          <div id="youtube-video-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Spinner / loading state -->
+            <div class="col-span-full text-center py-12 text-slate-500 font-mono text-xs">
+              <i class="fa-solid fa-circle-notch fa-spin text-cyberCyan text-lg mb-2"></i><br>
+              INITIALIZING LIVE YOUTUBE VIDEO PIPELINE...
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== RESOURCES TAB ==================== -->
+      <section id="tab-resources" class="tab-view hidden space-y-8 max-w-5xl mx-auto">
+        <!-- SLA vs XLA Watermelon Calculator Upgrade -->
+        <div class="glass-panel p-8 space-y-6 bg-gradient-to-br from-cyberSlate to-cyberBg">
+          <div>
+            <span class="badge-neon"><i class="fa-solid fa-calculator text-cyberCyan animate-pulse"></i> Interactive ITSM Calculator</span>
+            <h2 class="text-3xl font-bold text-white mt-2">The SLA vs. XLA "Watermelon Index" Calculator</h2>
+            <p class="text-slate-400 text-xs mt-1">
+              Adjust standard Service Desk operational metrics to calculate the "Watermelon Index". See how green SLAs can sometimes mask a bleeding red user experience (XLA).
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
+            <!-- Sliders Panel -->
+            <div class="space-y-6">
+              <!-- Slider 1: MTTR -->
+              <div class="space-y-2">
+                <div class="flex justify-between items-center text-xs">
+                  <label class="font-bold text-slate-300 uppercase">Average Ticket MTTR (Resolution Time):</label>
+                  <span id="calc-mttr-val" class="font-mono text-cyberCyan font-bold">4.0 Hours</span>
+                </div>
+                <input type="range" id="calc-mttr-slider" min="0.5" max="24" step="0.5" value="4.0" oninput="calculateWatermelonIndex()" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyberCyan">
+                <p class="text-[9px] text-slate-500">Industry standard SLA target is generally under 4 hours.</p>
+              </div>
+
+              <!-- Slider 2: FCR -->
+              <div class="space-y-2">
+                <div class="flex justify-between items-center text-xs">
+                  <label class="font-bold text-slate-300 uppercase">First Contact Resolution (FCR):</label>
+                  <span id="calc-fcr-val" class="font-mono text-cyberCyan font-bold">85%</span>
+                </div>
+                <input type="range" id="calc-fcr-slider" min="10" max="100" step="5" value="85" oninput="calculateWatermelonIndex()" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyberCyan">
+                <p class="text-[9px] text-slate-500">Percentage of tickets resolved by the first engineer desk without bounces.</p>
+              </div>
+
+              <!-- Slider 3: CSAT -->
+              <div class="space-y-2">
+                <div class="flex justify-between items-center text-xs">
+                  <label class="font-bold text-slate-300 uppercase">User CSAT Survey Score:</label>
+                  <span id="calc-csat-val" class="font-mono text-cyberCyan font-bold">4.6 / 5.0</span>
+                </div>
+                <input type="range" id="calc-csat-slider" min="1.0" max="5.0" step="0.1" value="4.6" oninput="calculateWatermelonIndex()" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyberCyan">
+                <p class="text-[9px] text-slate-500">Average star rating returned by end-users upon ticket closure.</p>
+              </div>
+            </div>
+
+            <!-- Visualization Gauge and Alert Card -->
+            <div class="p-6 rounded-2xl bg-black/40 border border-white/[0.05] flex flex-col justify-between space-y-6 relative overflow-hidden">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 class="text-xs font-bold text-slate-400 uppercase">Calculated SLA Status:</h4>
+                  <span id="calc-sla-badge" class="px-2 py-0.5 mt-1 rounded bg-green-500/10 border border-green-500/30 text-green-400 text-[10px] font-mono font-bold inline-block">SLA COMPLIANT (98.4%)</span>
+                </div>
+                <div class="text-right">
+                  <h4 class="text-xs font-bold text-slate-400 uppercase">XLA Sentiment Indicator:</h4>
+                  <span id="calc-xla-sentiment" class="font-mono text-sm font-bold text-cyberCyan block mt-1">Excellent Experience</span>
+                </div>
+              </div>
+
+              <!-- Visual Slider Gauge -->
+              <div class="space-y-2 pt-2">
+                <div class="flex justify-between text-[9px] text-slate-500 font-mono">
+                  <span>FRUSTRATED (RED)</span>
+                  <span>NEUTRAL (AMBER)</span>
+                  <span>DELIGHTED (CYAN)</span>
+                </div>
+                <div class="h-2.5 w-full rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-cyberCyan relative">
+                  <!-- The pin that moves dynamically -->
+                  <div id="calc-watermelon-pin" class="w-4 h-4 rounded-full bg-white border-2 border-slate-900 absolute -top-0.5 shadow-lg shadow-black/80 transition-all duration-300 transform -translate-x-1/2" style="left: 85%;"></div>
+                </div>
+              </div>
+
+              <!-- Reactive Alert Card -->
+              <div id="calc-watermelon-card" class="p-4 bg-cyberCyan/5 border border-cyberCyan/20 rounded-xl flex items-start gap-3 transition-all duration-300">
+                <div id="calc-watermelon-icon" class="text-cyberCyan text-lg shrink-0 mt-0.5"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                  <h5 id="calc-watermelon-title" class="font-bold text-xs text-white uppercase">Green and Healthy Experience</h5>
+                  <p id="calc-watermelon-desc" class="text-[10px] text-slate-400 leading-relaxed mt-1">
+                    Your service parameters are perfectly aligned! Fast resolution times combined with high FCR ensure that users are returning to work instantly with zero friction.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel p-8 space-y-6">
+          <div>
+            <span class="badge-neon"><i class="fa-solid fa-file-invoice animate-pulse"></i> Downloadable Templates</span>
+            <h2 class="text-3xl font-bold text-white mt-2">ITSM SOPs & ITIL Resources</h2>
+            <p class="text-slate-400 text-xs mt-1">Download premium templates and blueprints to immediately improve your operational compliance and documentation quality.</p>
+          </div>
+
+          <!-- Download Files List -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- SOP Template -->
+            <div class="p-5 bg-white/[0.02] border border-white/[0.05] rounded-2xl flex items-center justify-between gap-4 group hover:border-cyberCyan/30 transition">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan text-xl shrink-0"><i class="fa-solid fa-file-word"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white group-hover:text-cyberCyan transition duration-300">IT Standard Operating Procedure (SOP)</h4>
+                  <p class="text-[10px] text-slate-500">Word Document • 45 KB • For AI RAG compatibility</p>
+                  <a href="#" onclick="openSOPViewer('sop_sop')" class="text-cyberCyan text-[10px] font-bold uppercase hover:underline mt-1.5 inline-block"><i class="fa-solid fa-eye mr-1"></i> View Blueprint Inline</a>
+                </div>
+              </div>
+              <a href="#" class="w-9 h-9 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-slate-400 hover:text-white hover:border-cyberCyan transition"><i class="fa-solid fa-download"></i></a>
+            </div>
+
+            <!-- ITIL Incident Template -->
+            <div class="p-5 bg-white/[0.02] border border-white/[0.05] rounded-2xl flex items-center justify-between gap-4 group hover:border-cyberPurple/30 transition">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-cyberPurple/10 border border-cyberPurple/30 flex items-center justify-center text-cyberPurple text-xl shrink-0"><i class="fa-solid fa-file-lines"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white group-hover:text-cyberPurple transition duration-300">ITIL 4 Incident Playbook Template</h4>
+                  <p class="text-[10px] text-slate-500">PDF Document • 120 KB • Standard operating guidelines</p>
+                  <a href="#" onclick="openSOPViewer('sop_incident')" class="text-cyberPurple text-[10px] font-bold uppercase hover:underline mt-1.5 inline-block"><i class="fa-solid fa-eye mr-1"></i> View Playbook Inline</a>
+                </div>
+              </div>
+              <a href="#" class="w-9 h-9 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-slate-400 hover:text-white hover:border-cyberPurple transition"><i class="fa-solid fa-download"></i></a>
+            </div>
+
+            <!-- Change Request Template -->
+            <div class="p-5 bg-white/[0.02] border border-white/[0.05] rounded-2xl flex items-center justify-between gap-4 group hover:border-cyberBlue/30 transition">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-cyberBlue/10 border border-cyberBlue/30 flex items-center justify-center text-cyberBlue text-xl shrink-0"><i class="fa-solid fa-file-signature"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white group-hover:text-cyberBlue transition duration-300">CAB Risk Evaluation Form</h4>
+                  <p class="text-[10px] text-slate-500">Excel Spreadsheet • 75 KB • Pre-calculated risk formulas</p>
+                  <a href="#" onclick="openSOPViewer('sop_cab')" class="text-cyberBlue text-[10px] font-bold uppercase hover:underline mt-1.5 inline-block"><i class="fa-solid fa-eye mr-1"></i> View Risk Form Inline</a>
+                </div>
+              </div>
+              <a href="#" class="w-9 h-9 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-slate-400 hover:text-white hover:border-cyberBlue transition"><i class="fa-solid fa-download"></i></a>
+            </div>
+
+            <!-- KPI Dashboard Scorecard -->
+            <div class="p-5 bg-white/[0.02] border border-white/[0.05] rounded-2xl flex items-center justify-between gap-4 group hover:border-cyberCyan/30 transition">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan text-xl shrink-0"><i class="fa-solid fa-chart-column"></i></div>
+                <div>
+                  <h4 class="font-bold text-sm text-white group-hover:text-cyberCyan transition duration-300">Service Desk Scorecard Blueprint</h4>
+                  <p class="text-[10px] text-slate-500">Power BI File • 310 KB • Ready-to-connect datasets</p>
+                  <a href="#" onclick="openSOPViewer('sop_kpi')" class="text-cyberCyan text-[10px] font-bold uppercase hover:underline mt-1.5 inline-block"><i class="fa-solid fa-eye mr-1"></i> View Scorecard Inline</a>
+                </div>
+              </div>
+              <a href="#" class="w-9 h-9 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-slate-400 hover:text-white hover:border-cyberCyan transition"><i class="fa-solid fa-download"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== CONTACT TAB ==================== -->
+      <section id="tab-contact" class="tab-view hidden space-y-8 max-w-4xl mx-auto">
+        <div class="glass-panel p-6 md:p-8 space-y-6">
+          <div>
+            <span class="badge-neon">Connect Directly</span>
+            <h2 class="text-3xl font-bold text-white mt-2">Get in Touch</h2>
+            <p class="text-slate-400 text-xs mt-1">Ready to modernize your Service Desk, migrate to Enterprise ESM, or design advanced AI workflows? Let's connect.</p>
+          </div>
+
+          <form id="contact-form" onsubmit="submitContactForm(event)" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-400 uppercase">Your Name:</label>
+                <input type="text" id="contact-name" class="cyber-input text-xs" required placeholder="John Doe">
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-400 uppercase">Email Address:</label>
+                <input type="email" id="contact-email" class="cyber-input text-xs" required placeholder="john@example.com">
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label class="text-xs font-bold text-slate-400 uppercase">Subject of Enquiry:</label>
+              <select id="contact-subject" class="cyber-input text-xs" onchange="triggerAIPreScreener()">
+                <option value="default" disabled selected>Select an area of interest...</option>
+                <option value="ITSM Integration">AI & ITSM Integration Consulting</option>
+                <option value="Enterprise ESM">Enterprise ESM Platform Setup / Migration</option>
+                <option value="Power BI Dashboarding">Power BI Operations Dashboard Setup</option>
+                <option value="Speaking / Content">Speaking Engagement / Content Sponsorship</option>
+              </select>
+            </div>
+
+            <!-- Dynamic AI Chat Assessment Box -->
+            <div id="ai-prescreener-box" class="space-y-2 hidden">
+              <label class="text-xs font-bold text-cyberCyan uppercase flex items-center gap-2"><i class="fa-solid fa-robot animate-pulse"></i> AI Consultation Pre-Screener:</label>
+              <div class="p-4 bg-cyberCyan/5 border border-cyberCyan/30 rounded-lg space-y-3 relative shadow-[0_0_15px_rgba(0,255,255,0.1)]">
+                <div id="ai-prescreener-question" class="text-sm font-mono text-slate-300">
+                  <span class="text-cyberCyan">&gt;</span> <span class="typing-text">Analyzing selection...</span>
+                </div>
+                <textarea id="ai-prescreener-answer" rows="2" class="cyber-input font-mono text-xs w-full bg-black/50" placeholder="Type your response here to help us prepare..."></textarea>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-bold text-slate-400 uppercase">Additional Details (Optional):</label>
+              <textarea id="contact-message" rows="4" class="cyber-input text-xs leading-relaxed" placeholder="Please describe any other details for our consultation..."></textarea>
+            </div>
+
+            <!-- Live Success Animation Container -->
+            <div id="contact-success-msg" class="p-3 bg-cyberGreen/10 border border-cyberGreen/20 text-cyberGreen text-xs rounded-lg font-bold flex items-center gap-3 hidden">
+              <i class="fa-solid fa-circle-check text-base"></i> Dynamic Message Sent Successfully! I'll connect with you on LinkedIn or email.
+            </div>
+
+            <div class="flex justify-end pt-2">
+              <button type="submit" class="cyber-btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Social Media Floating Buttons -->
+        <div class="glass-panel p-6 flex flex-wrap justify-around items-center gap-4">
+          <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-cyberCyan transition text-sm font-bold"><i class="fa-brands fa-linkedin text-xl text-cyberBlue"></i> Connect on LinkedIn</a>
+          <a href="https://www.youtube.com/results?search_query=The+AI+Driven+IT+Manager" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-red-500 transition text-sm font-bold"><i class="fa-brands fa-youtube text-xl text-red-500"></i> Subscribe on YouTube</a>
+          <a href="https://wa.me" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-cyberGreen transition text-sm font-bold"><i class="fa-brands fa-whatsapp text-xl text-cyberGreen"></i> Chat on WhatsApp</a>
+        </div>
+      </section>
+
+      <!-- Footer section -->
+      <footer class="mt-16 pt-8 border-t border-white/[0.08] text-center text-xs text-slate-500 space-y-2">
+        <p>&copy; 2026 Abhineet Singh. All Rights Reserved.</p>
+        <p class="text-[10px] uppercase tracking-widest text-cyberCyan font-bold">The World's Most Modern AI-Powered ITSM Platform</p>
+      </footer>
+
+    
+      <!-- ==================== SERVICE DESK COURSE & EXAMS TAB ==================== -->
+      <section id="tab-course" class="tab-view hidden space-y-8 max-w-6xl mx-auto">
+        <!-- Hero Course Banner -->
+        <div class="glass-panel p-6 md:p-10 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 bg-gradient-to-br from-cyberSlate to-cyberBg">
+          <div class="space-y-4 flex-1">
+            <span class="badge-neon"><i class="fa-solid fa-graduation-cap text-amber-400"></i> Free 12-Chapter Certification Curriculum</span>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+              IT Service Desk & <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-cyberCyan to-cyberPurple">AI Operations Mastery</span>
+            </h1>
+            <p class="text-slate-300 text-sm leading-relaxed max-w-2xl">
+              Master IT Helpdesk Fundamentals, Advanced ITSM Operations, and Next-Gen AI Virtual Agent Automation — structured step-by-step into 3 Skill Progression Levels with automated exams and official certification.
+            </p>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button onclick="launchExam('final')" class="cyber-btn bg-gradient-to-r from-emerald-500 to-cyberPurple"><i class="fa-solid fa-trophy"></i> Grand Master Exam (50 Qs)</button>
+              <div onclick="copyDirectEmail()" class="glass-panel px-4 py-2 border.border-white/[0.1] rounded-xl flex items-center gap-2 text-xs font-mono font-bold text-white cursor-pointer hover:border-amber-400 transition" title="Click to copy email">
+                <i class="fa-solid fa-envelope text-amber-400"></i> abhineetsam2027@gmail.com <i class="fa-solid fa-copy text-slate-500"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Stats Badge -->
+          <div class="flex gap-4 shrink-0 font-mono">
+            <div class="p-4 glass-panel border border-white/[0.08] rounded-2xl text-center min-w-[90px]">
+              <span class="text-3xl font-extrabold text-white block">3</span>
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Levels</span>
+            </div>
+            <div class="p-4 glass-panel border border-white/[0.08] rounded-2xl text-center min-w-[90px]">
+              <span class="text-3xl font-extrabold text-cyberCyan block">12</span>
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Chapters</span>
+            </div>
+            <div class="p-4 glass-panel border border-white/[0.08] rounded-2xl text-center min-w-[90px]">
+              <span class="text-3xl font-extrabold text-emerald-400 block">100%</span>
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Free</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level Filter Tabs -->
+        <div class="flex gap-3 overflow-x-auto pb-2 border-b border-white/[0.08]">
+          <button onclick="filterCourseLevel('all')" id="btn-lvl-all" class="course-lvl-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-amber-500 text-white shadow-lg shadow-amber-500/25">All Chapters (12)</button>
+          <button onclick="filterCourseLevel('1')" id="btn-lvl-1" class="course-lvl-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white/[0.03] text-slate-400 hover:text-white border border-white/[0.08]">Level 1: Foundation (4)</button>
+          <button onclick="filterCourseLevel('2')" id="btn-lvl-2" class="course-lvl-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white/[0.03] text-slate-400 hover:text-white border border-white/[0.08]">Level 2: Intermediate (4)</button>
+          <button onclick="filterCourseLevel('3')" id="btn-lvl-3" class="course-lvl-btn px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white/[0.03] text-slate-400 hover:text-white border border-white/[0.08]">Level 3: Advanced ITIL & AI (4)</button>
+        </div>
+
+        <!-- Level Summaries Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-panel p-6 border-t-4 border-emerald-500 space-y-3">
+            <div class="flex justify-between items-center text-xs">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 uppercase">Level 1: Foundation</span>
+              <span class="text-slate-500 font-mono text-[10px]">Chapters 1–4</span>
+            </div>
+            <h3 class="text-base font-bold text-white">Helpdesk Basics & L1 Operations</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Master ticket logging, priority matrices, Active Directory password resets, SLA clocks, and user communication skills.</p>
+            <button onclick="launchExam('level1')" class="w-full py-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-xl text-emerald-400 text-xs font-bold transition"><i class="fa-solid fa-pen-to-square"></i> Take Level 1 Exam (20 Qs)</button>
+          </div>
+
+          <div class="glass-panel p-6 border-t-4 border-cyberBlue space-y-3">
+            <div class="flex justify-between items-center text-xs">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-cyberBlue/20 text-cyberBlue border border-cyberBlue/30 uppercase">Level 2: Intermediate</span>
+              <span class="text-slate-500 font-mono text-[10px]">Chapters 5–8</span>
+            </div>
+            <h3 class="text-base font-bold text-white">ITSM Operations, Intune & JML</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Deep dive into Microsoft Intune endpoint management, VDI, NHS Smartcard RA administration, Major Incident bridges, and CAB approvals.</p>
+            <button onclick="launchExam('level2')" class="w-full py-2 bg-cyberBlue/10 hover:bg-cyberBlue/20 border border-cyberBlue/30 rounded-xl text-cyberBlue text-xs font-bold transition"><i class="fa-solid fa-pen-to-square"></i> Take Level 2 Exam (30 Qs)</button>
+          </div>
+
+          <div class="glass-panel p-6 border-t-4 border-cyberPurple space-y-3">
+            <div class="flex justify-between items-center text-xs">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-cyberPurple/20 text-cyberPurple border border-cyberPurple/30 uppercase">Level 3: Advanced</span>
+              <span class="text-slate-500 font-mono text-[10px]">Chapters 9–12</span>
+            </div>
+            <h3 class="text-base font-bold text-white">ITIL Management, XLAs & AI Agents</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Implement Shift-Left self-service, Experience Level Agreements (XLAs), ServiceNow/Halo ESM workflows, and AI Virtual Agent automation.</p>
+            <button onclick="launchExam('level3')" class="w-full py-2 bg-cyberPurple/10 hover:bg-cyberPurple/20 border border-cyberPurple/30 rounded-xl text-cyberPurple text-xs font-bold transition"><i class="fa-solid fa-pen-to-square"></i> Take Level 3 Exam (40 Qs)</button>
+          </div>
+        </div>
+
+        <!-- Master Exam Banner Callout -->
+        <div class="glass-panel p-6 border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-cyberPurple/10 to-transparent flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-1">
+            <span class="text-[10px] font-bold text-amber-400 uppercase tracking-widest"><i class="fa-solid fa-award"></i> FINAL VERIFIED CERTIFICATION</span>
+            <h3 class="text-xl font-bold text-white">Grand Master Certification Exam (50 Questions | 100 Marks)</h3>
+            <p class="text-xs text-slate-300">Score 70% or higher to generate an official printable Certificate of Completion signed by Abhineet Singh.</p>
+          </div>
+          <button onclick="launchExam('final')" class="cyber-btn bg-gradient-to-r from-amber-500 to-cyberPurple text-white shrink-0"><i class="fa-solid fa-trophy"></i> Start Master Exam & Get Certified</button>
+        </div>
+
+        <!-- Course Chapters Grid Container -->
+        <div id="course-chapters-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Full Blog Article Reader View Overlay Modal -->
+  <div id="blog-reader-modal" class="fixed inset-0 bg-cyberBg/90 backdrop-blur-md z-[9999] flex items-center justify-center p-4 hidden">
+    <div class="glass-panel w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-white/[0.1] relative p-6 md:p-10 space-y-6">
+      <!-- Close button -->
+      <button onclick="closeBlogModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white hover:bg-white/[0.1]"><i class="fa-solid fa-times"></i></button>
+      
+      <!-- Article Top Details -->
+      <div class="space-y-3">
+        <span id="modal-blog-category" class="badge-neon">Category</span>
+        <h2 id="modal-blog-title" class="text-2xl md:text-4xl font-bold text-white leading-tight">Article Title</h2>
+        <div class="flex flex-wrap gap-4 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+          <span id="modal-blog-author"><i class="fa-solid fa-user"></i> Author</span>
+          <span id="modal-blog-readtime"><i class="fa-solid fa-clock"></i> Read Time</span>
+          <span id="modal-blog-likes" class="text-cyberCyan font-mono"><i class="fa-solid fa-thumbs-up"></i> --</span>
+        </div>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="h-64 md:h-96 rounded-2xl overflow-hidden border border-white/[0.08]">
+        <img id="modal-blog-img" src="" class="w-full h-full object-cover" alt="Article Hero">
+      </div>
+
+      <!-- Article Full Content HTML -->
+      <div id="modal-blog-body" class="prose prose-invert text-slate-300 text-sm md:text-base leading-relaxed space-y-4 max-w-none">
+        <!-- Dynamically Populated by script.js -->
+      </div>
+
+      <!-- Tags list -->
+      <div id="modal-blog-tags" class="flex flex-wrap gap-2 border-t border-white/[0.08] pt-4">
+        <!-- Dynamically Populated -->
+      </div>
+
+      <!-- Comments Section -->
+      <div class="border-t border-white/[0.08] pt-6 space-y-4">
+        <h3 class="font-bold text-lg text-white"><i class="fa-solid fa-comments text-cyberCyan"></i> Discussion Comments</h3>
+        
+        <!-- Live add comment form -->
+        <div class="flex gap-4 items-start">
+          <div class="w-8 h-8 rounded-full bg-cyberPurple/25 border border-cyberPurple/50 flex items-center justify-center font-bold text-xs shrink-0">U</div>
+          <div class="flex-grow space-y-2">
+            <textarea id="blog-comment-input" rows="2" class="cyber-input text-xs py-2" placeholder="Write a comment..."></textarea>
+            <div class="flex justify-end">
+              <button onclick="postBlogComment()" class="cyber-btn py-1.5 px-4 text-xs"><i class="fa-solid fa-paper-plane"></i> Post Comment</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="modal-blog-comments-list" class="space-y-4 pt-2 divide-y divide-white/[0.05]">
+          <!-- Dynamically Populated -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forum Thread Details Modal Overlay -->
+  <div id="forum-thread-modal" class="fixed inset-0 bg-cyberBg/90 backdrop-blur-md z-[9999] flex items-center justify-center p-4 hidden">
+    <div class="glass-panel w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-white/[0.1] relative p-6 md:p-10 space-y-6">
+      <!-- Close button -->
+      <button onclick="closeForumModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white hover:bg-white/[0.1]"><i class="fa-solid fa-times"></i></button>
+      
+      <!-- Thread Top Details -->
+      <div class="space-y-2">
+        <span id="modal-forum-category" class="badge-purple">Category</span>
+        <h2 id="modal-forum-title" class="text-2xl md:text-3xl font-bold text-white leading-tight">Discussion Thread</h2>
+        <!-- Origin User Info -->
+        <div id="modal-forum-author-box" class="flex items-center gap-3 p-3 bg-white/[0.02] border border-white/[0.05] rounded-xl max-w-md">
+          <!-- Dynamically Populated -->
+        </div>
+      </div>
+
+      <!-- Replies Container -->
+      <div class="border-t border-white/[0.08] pt-6 space-y-6">
+        <h3 class="font-bold text-base text-white uppercase tracking-wider"><i class="fa-solid fa-comments text-cyberPurple"></i> Replies & Debate</h3>
+        
+        <div id="modal-forum-replies-list" class="space-y-6">
+          <!-- Dynamically Populated -->
+        </div>
+
+        <!-- Post a Reply Box -->
+        <div class="border-t border-white/[0.08] pt-6 space-y-3">
+          <h4 class="font-bold text-sm text-white">Join the Discussion</h4>
+          <div class="flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-600 to-teal-400 flex items-center justify-center text-white font-mono font-bold text-sm shrink-0">U</div>
+            <div class="flex-grow space-y-2">
+              <textarea id="forum-reply-input" rows="4" class="cyber-input text-xs leading-relaxed" placeholder="Type your analytical reply..."></textarea>
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] text-slate-500 font-mono">Posting as User (Global IT Guest)</span>
+                <button onclick="postForumReply()" class="cyber-btn py-2 px-6 text-xs"><i class="fa-solid fa-paper-plane"></i> Submit Reply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create New Topic Modal Overlay -->
+  <div id="create-topic-modal" class="fixed inset-0 bg-cyberBg/90 backdrop-blur-md z-[9999] flex items-center justify-center p-4 hidden">
+    <div class="glass-panel w-full max-w-xl border border-white/[0.1] relative p-6 space-y-6">
+      <button onclick="closeCreateTopicModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white hover:bg-white/[0.1]"><i class="fa-solid fa-times"></i></button>
+      
+      <div class="space-y-1">
+        <h2 class="text-2xl font-bold text-white">Start a New Discussion</h2>
+        <p class="text-xs text-slate-400">Post a new ITIL, ITSM, or AI tool question to the global community.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-slate-400 uppercase">Discussion Title:</label>
+          <input type="text" id="new-topic-title" class="cyber-input text-xs" placeholder="e.g. Best practices for migrating to ITIL 4 values...">
+        </div>
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-slate-400 uppercase">Forums Category:</label>
+          <select id="new-topic-category" class="cyber-input text-xs">
+            <option value="Tool Comparisons">Tool Comparisons</option>
+            <option value="AI Service Desk Automation">AI Service Desk Automation</option>
+            <option value="Incident Management">Incident Management</option>
+            <option value="Healthcare IT">Healthcare IT</option>
+            <option value="ITIL & Process Design">ITIL & Process Design</option>
+          </select>
+        </div>
+        <div class="space-y-2">
+          <label class="text-xs font-bold text-slate-400 uppercase">First Post Content:</label>
+          <textarea id="new-topic-content" rows="5" class="cyber-input text-xs leading-relaxed" placeholder="Write your topic introduction in detail..."></textarea>
+        </div>
+        <div class="flex justify-end pt-2">
+          <button onclick="submitNewTopic()" class="cyber-btn text-xs py-2 px-6"><i class="fa-solid fa-paper-plane"></i> Publish Topic</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Access & Lead Generation Modal -->
+  <div id="global-access-modal" class="fixed inset-0 bg-cyberBg/95 backdrop-blur-lg z-[9999] flex items-center justify-center p-4 hidden transition-all duration-500">
+    <div class="glass-panel w-full max-w-lg border border-white/[0.12] p-8 space-y-6 shadow-2xl shadow-cyberPurple/20 relative">
+      <!-- Glow decoration -->
+      <div class="absolute -inset-1 bg-gradient-to-tr from-cyberPurple via-cyberCyan to-cyberBlue rounded-2xl blur opacity-25 -z-10"></div>
+      
+      <div class="text-center space-y-2">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-tr from-cyberPurple to-cyberCyan flex items-center justify-center shadow-lg shadow-cyberPurple/25 mb-4">
+          <i class="fa-solid fa-user-shield text-white text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-white tracking-tight">Access Abhineet's ITSM AI Platform</h2>
+        <p class="text-xs text-slate-400 leading-relaxed max-w-sm mx-auto">
+          Welcome to the world's most modern AI-Driven Service Desk & Portfolio Workspace. Please join our global ITSM community to access all live sandboxes, forums, and resources.
+        </p>
+      </div>
+
+      <form id="access-form" onsubmit="handleAccessRegistration(event)" class="space-y-4">
+        <div class="space-y-1">
+          <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-user text-cyberCyan"></i> Full Name <span class="text-red-500 font-bold">*</span></label>
+          <input type="text" id="access-name" required class="cyber-input text-xs" placeholder="e.g. John Doe">
+        </div>
+        <div class="space-y-1">
+          <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-envelope text-cyberPurple"></i> Email Address <span class="text-red-500 font-bold">*</span></label>
+          <input type="email" id="access-email" required class="cyber-input text-xs" placeholder="e.g. john.doe@company.com">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-globe text-cyberCyan"></i> Country <span class="text-red-500 font-bold">*</span></label>
+            <input type="text" id="access-country" required class="cyber-input text-xs" placeholder="e.g. United Kingdom">
+          </div>
+          <div class="space-y-1">
+            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-briefcase text-cyberPurple"></i> Current Profile <span class="text-red-500 font-bold">*</span></label>
+            <select id="access-profile" required onchange="toggleAccessStudentField()" class="cyber-input text-xs font-mono">
+              <option value="IT Manager / Executive">IT Manager / Executive</option>
+              <option value="ITSM / Service Delivery Specialist">ITSM / Specialist</option>
+              <option value="System / Cloud Engineer">System / Cloud Engineer</option>
+              <option value="Support Analyst / L1-L2 Tech">Support / L1-L2 Tech</option>
+              <option value="Student">Student / Researcher</option>
+              <option value="Other">Other / Consultant</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Dynamic Student Field -->
+        <div id="access-student-box" class="space-y-1 hidden">
+          <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-graduation-cap text-cyberCyan"></i> Field of Study / University <span class="text-red-500 font-bold">*</span></label>
+          <input type="text" id="access-student-details" class="cyber-input text-xs" placeholder="e.g. B.Sc in IT Management, University of London">
+        </div>
+
+        <div class="pt-2 flex flex-col gap-2">
+          <button type="submit" class="cyber-btn w-full py-3 text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-circle-check"></i> Submit & Gain Access</button>
+          <button type="button" onclick="enterAsGuest()" class="text-[10px] text-slate-400 hover:text-cyberCyan transition-all duration-300 font-mono tracking-wider uppercase text-center mt-2 flex items-center justify-center gap-1.5"><i class="fa-solid fa-arrow-right-to-bracket text-cyberCyan"></i> Explore as Guest (Skip Registration)</button>
+        </div>
+      </form>
+      
+      <div id="access-success-box" class="p-4 bg-cyberGreen/10 border border-cyberGreen/20 text-cyberGreen text-xs rounded-xl font-bold flex items-center justify-center gap-3 hidden">
+        <i class="fa-solid fa-circle-check text-lg pulse-led"></i> Access Approved! Loading Interactive Portal...
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive SOP / Playbook Viewer Modal -->
+  <div id="sop-viewer-modal" class="fixed inset-0 bg-cyberBg/95 backdrop-blur-md z-[9999] flex items-center justify-center p-4 hidden transition-all duration-500 opacity-0">
+    <div class="glass-panel w-full max-w-4xl max-h-[85vh] flex flex-col bg-gradient-to-br from-cyberSlate to-cyberBg border-cyberCyan/20 overflow-hidden shadow-2xl relative">
+      <!-- Header -->
+      <div class="p-6 border-b border-slate-800 flex justify-between items-center bg-black/20 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan text-lg"><i class="fa-solid fa-file-invoice"></i></div>
+          <div>
+            <h3 id="sop-title" class="font-bold text-base text-white uppercase tracking-wide">ITSM Standard Blueprint</h3>
+            <span id="sop-badge" class="px-2 py-0.5 mt-0.5 rounded bg-cyberCyan/10 border border-cyberCyan/30 text-cyberCyan text-[9px] font-mono font-bold inline-block uppercase">SOP MANUAL</span>
+          </div>
+        </div>
+        <button onclick="closeSOPViewer()" class="w-9 h-9 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-slate-400 hover:text-white hover:border-red-500/50 transition"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Content Box -->
+      <div id="sop-body" class="p-6 md:p-8 overflow-y-auto flex-1 font-mono text-[11px] leading-relaxed text-slate-300 select-all space-y-4">
+        <!-- Document Content Loaded Dynamically by script.js -->
+      </div>
+
+      <!-- Footer -->
+      <div class="p-4 border-t border-slate-800 bg-black/30 shrink-0 flex justify-between items-center text-[10px] font-bold text-slate-500 font-mono">
+        <span>Prepared by Abhineet Singh | Operations Lead</span>
+        <button onclick="window.print()" class="px-4 py-2 bg-cyberCyan/10 border border-cyberCyan/30 hover:bg-cyberCyan/20 hover:border-cyberCyan text-cyberCyan rounded-lg flex items-center gap-1.5 transition"><i class="fa-solid fa-print"></i> Print Document</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Database & Application Core Logics -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+<script>
+// -------------------------------------------------------------
+// COURSE CHAPTERS DATA (12 Chapters in 3 Progression Levels)
+// -------------------------------------------------------------
+const platformCourseChapters = [
+    // LEVEL 1: FOUNDATION (Chapters 1-4)
+    {
+        id: "ch_1", chapterNum: 1, level: 1, levelName: "Level 1: Foundation",
+        title: "Modern IT Service Desk Fundamentals", duration: "45 min", badge: "Helpdesk Basics",
+        desc: "Role of Service Desk, Call vs. Ticket Logging, Active Listening, Customer Centricity, First Contact Resolution (FCR).",
+        keyTakeaways: [
+            "Difference between Helpdesk, Service Desk & ITSM",
+            "Active Listening & empathetic user communication",
+            "FCR (First Contact Resolution) optimization metrics",
+            "Standard Ticket Logging fields (Caller, Impact, Urgency)"
+        ]
+    },
+    {
+        id: "ch_2", chapterNum: 2, level: 1, levelName: "Level 1: Foundation",
+        title: "Incident Management Basics & Ticket Lifecycle", duration: "50 min", badge: "Incident Mgt",
+        desc: "Incident Definition vs Request, Priority Matrix (Impact x Urgency), Ticket Statuses, Work Notes & Audit Trails.",
+        keyTakeaways: [
+            "Incident vs. Service Request distinction",
+            "Priority Matrix calculation (P1 Critical vs P4 Low)",
+            "Ticket Lifecycle: New -> In Progress -> On Hold -> Resolved",
+            "Effective Work Notes for L2/L3 escalation"
+        ]
+    },
+    {
+        id: "ch_3", chapterNum: 3, level: 1, levelName: "Level 1: Foundation",
+        title: "Identity, Access & Active Directory Management", duration: "40 min", badge: "Active Directory",
+        desc: "Active Directory (AD) User Creation, Password Resets, Locked Accounts, Security Groups, Multi-Factor Authentication (MFA).",
+        keyTakeaways: [
+            "AD Users, OUs & Security Group memberships",
+            "Password unlock & reset troubleshooting procedures",
+            "MFA (Microsoft Authenticator) registration & reset",
+            "Shared Folder & Network Drive security permissions"
+        ]
+    },
+    {
+        id: "ch_4", chapterNum: 4, level: 1, levelName: "Level 1: Foundation",
+        title: "Customer Communication & SLA Management", duration: "35 min", badge: "SLAs & Comms",
+        desc: "Escalation Etiquette, Managing Anxious Users, SLA Clock Management, Resolution Code Tagging.",
+        keyTakeaways: [
+            "De-escalating agitated users over phone and chat",
+            "SLA Response vs SLA Resolution time clocks",
+            "Proper ticket resolution summaries for end-users",
+            "CSAT (Customer Satisfaction) survey best practices"
+        ]
+    },
+
+    // LEVEL 2: INTERMEDIATE (Chapters 5-8)
+    {
+        id: "ch_5", chapterNum: 5, level: 2, levelName: "Level 2: Intermediate",
+        title: "Endpoint Management with MS Intune & VDI", duration: "60 min", badge: "Intune & Endpoints",
+        desc: "Intune Device Enrollment, Remote Wipes, Software Deployment, Citrix/VDI Virtual Desktops, Reimaging Laptops.",
+        keyTakeaways: [
+            "Windows 10/11 Autopilot & Intune enrolment",
+            "Remote lock, wipe, and passcode reset operations",
+            "Software pushed via Company Portal",
+            "Virtual Desktop Infrastructure (Citrix / Windows 365)"
+        ]
+    },
+    {
+        id: "ch_6", chapterNum: 6, level: 2, levelName: "Level 2: Intermediate",
+        title: "Clinical & Enterprise Application Support", duration: "55 min", badge: "Apps & Clinical",
+        desc: "EMIS Web, SystmOne, NHS Mail administration, MS Teams, SharePoint permissions, Application crash diagnostics.",
+        keyTakeaways: [
+            "EMIS Web & SystmOne credential & access reset",
+            "NHS Mail admin portal & shared mailboxes",
+            "Troubleshooting Teams, Outlook & Office 365 crashes",
+            "Log collection & application event viewer analysis"
+        ]
+    },
+    {
+        id: "ch_7", chapterNum: 7, level: 2, levelName: "Level 2: Intermediate",
+        title: "Joiners, Movers, Leavers (JML) & Smartcards (RA)", duration: "50 min", badge: "JML & Smartcards",
+        desc: "Automated JML Workflows, Hardware Provisioning, NHS Smartcard (RA) unlocking, renewals, spine roles.",
+        keyTakeaways: [
+            "Day 1 Readiness for Joiner onboarding",
+            "Mover role transfer & access revocation",
+            "Leaver hardware retrieval & account disablement",
+            "RA Smartcard passcode reset & Spine role assignment"
+        ]
+    },
+    {
+        id: "ch_8", chapterNum: 8, level: 2, levelName: "Level 2: Intermediate",
+        title: "Major Incident Management & CAB Approvals", duration: "65 min", badge: "P1 Incidents & CAB",
+        desc: "P1/P2 Major Incident Bridge Calls, Root Cause Analysis (RCA), CAB approvals, Risk Assessment for Changes.",
+        keyTakeaways: [
+            "Declaring P1 Major Incidents & running outage bridges",
+            "Status page broadcasts & stakeholder communication",
+            "Emergency vs Standard vs Normal CAB Changes",
+            "Post-Incident Review (PIR) & Root Cause Analysis (RCA)"
+        ]
+    },
+
+    // LEVEL 3: ADVANCED (Chapters 9-12)
+    {
+        id: "ch_9", chapterNum: 9, level: 3, levelName: "Level 3: Advanced ITIL & AI",
+        title: "Shift-Left Strategy & Knowledge Engineering", duration: "60 min", badge: "Shift-Left & KCS",
+        desc: "KCS (Knowledge-Centered Service), Self-Service Deflection, Knowledge Base (KB) Article Publishing, End-User Empowering.",
+        keyTakeaways: [
+            "Shift-Left concept: L2 -> L1 -> Self-Service AI",
+            "KCS Article drafting & review workflow",
+            "Designing user-friendly KB guides with screenshots",
+            "Measuring deflection rate & self-service adoption"
+        ]
+    },
+    {
+        id: "ch_10", chapterNum: 10, level: 3, levelName: "Level 3: Advanced ITIL & AI",
+        title: "Metrics, Scorecards & Experience Level Agreements (XLAs)", duration: "55 min", badge: "XLAs & Scorecards",
+        desc: "Shift from SLAs to XLAs (Experience Level Agreements), CSAT Metrics, Analyst Productivity Scorecards, Weightage Systems.",
+        keyTakeaways: [
+            "Why traditional SLAs fail end-user satisfaction",
+            "Designing XLAs (Sentiment, Ease of Use, Employee Productivity)",
+            "Creating Analyst Productivity Scorecards",
+            "Gamification & Recognition (Hall of Fame)"
+        ]
+    },
+    {
+        id: "ch_11", chapterNum: 11, level: 3, levelName: "Level 3: Advanced ITIL & AI",
+        title: "ITSM Tool Deep Dive: ServiceNow vs. Halo ESM", duration: "70 min", badge: "ServiceNow & Halo",
+        desc: "Halo ESM Configuration, ServiceNow Workflows, Catalog Management, ESM expansion beyond IT.",
+        keyTakeaways: [
+            "Architecture comparison: ServiceNow vs Halo ESM",
+            "Configuring Service Catalogs & Request Workflows",
+            "Enterprise Service Management (ESM for HR, Facilities, Finance)",
+            "Cost optimization & ROI calculation for ITSM platforms"
+        ]
+    },
+    {
+        id: "ch_12", chapterNum: 12, level: 3, levelName: "Level 3: Advanced ITIL & AI",
+        title: "Next-Gen AI Service Desk & Virtual Agent Integration", duration: "80 min", badge: "AI Virtual Agent",
+        desc: "Building Zero-Touch AI Agents, LLM Intent Classification, Automated Ticket Triage, LangChain/CrewAI Workflows.",
+        keyTakeaways: [
+            "AI Agent architecture for IT Helpdesk support",
+            "Natural Language Intent Classification for tickets",
+            "Connecting RAG Knowledge Base to LLM chatbots",
+            "Automated resolution of L1 password & access requests"
+        ]
+    }
+];
+
+function renderPlatformCourseChapters(filterLvl = 'all') {
+    const grid = document.getElementById('course-chapters-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    const filtered = filterLvl === 'all' 
+        ? platformCourseChapters 
+        : platformCourseChapters.filter(c => c.level === parseInt(filterLvl));
+
+    filtered.forEach(ch => {
+        const card = document.createElement('div');
+        card.className = 'glass-panel p-6 flex flex-col justify-between space-y-4 hover:border-cyberCyan/40 transition duration-300 relative';
+        
+        let chipBg = 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
+        if (ch.level === 2) chipBg = 'bg-cyberBlue/20 text-cyberBlue border-cyberBlue/30';
+        if (ch.level === 3) chipBg = 'bg-cyberPurple/20 text-cyberPurple border-cyberPurple/30';
+
+        const takeaways = ch.keyTakeaways.map(t => `<li class="flex items-start gap-1.5"><i class="fa-solid fa-circle-check text-[10px] text-cyberCyan mt-1"></i> <span>${t}</span></li>`).join('');
+
+        card.innerHTML = `
+            <div class="space-y-3">
+                <div class="flex justify-between items-center text-xs">
+                    <span class="px-2.5 py-0.5 rounded text-[10px] font-bold border uppercase ${chipBg}">${ch.levelName}</span>
+                    <span class="font-mono text-[10px] text-slate-500">Chapter ${ch.chapterNum} of 12</span>
+                </div>
+                <h3 class="text-base font-bold text-white leading-snug">${ch.title}</h3>
+                <p class="text-slate-400 text-xs leading-relaxed">${ch.desc}</p>
+                <div class="flex flex-wrap gap-2 pt-1 font-mono text-[10px]">
+                    <span class="px-2 py-0.5 bg-white/[0.04] border border-white/[0.08] rounded text-slate-300"><i class="fa-regular fa-clock text-amber-400"></i> ${ch.duration}</span>
+                    <span class="px-2 py-0.5 bg-white/[0.04] border border-white/[0.08] rounded text-slate-300"><i class="fa-solid fa-tag text-cyberCyan"></i> ${ch.badge}</span>
+                </div>
+                <div class="p-3 bg-black/40 border border-slate-800 rounded-xl space-y-2">
+                    <span class="text-[10px] font-bold text-cyberPurple uppercase tracking-wider block"><i class="fa-solid fa-lightbulb"></i> Key Takeaways</span>
+                    <ul class="space-y-1 text-xs text-slate-300 font-mono">${takeaways}</ul>
+                </div>
+            </div>
+            <div class="flex gap-2 pt-2">
+                <button onclick="openChapterLessonModal('${ch.title}', '${ch.duration}')" class="cyber-btn text-xs py-2 flex-1 justify-center"><i class="fa-solid fa-circle-play"></i> Watch Lesson</button>
+                <button onclick="openContactModalWithSubject('Question: ${ch.title}')" class="cyber-btn-outline text-xs py-2 px-3"><i class="fa-solid fa-envelope"></i> Ask</button>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+function filterCourseLevel(lvl) {
+    document.querySelectorAll('.course-lvl-btn').forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-white', 'shadow-lg');
+        btn.classList.add('bg-white/[0.03]', 'text-slate-400');
+    });
+    const activeBtn = document.getElementById(`btn-lvl-${lvl}`);
+    if (activeBtn) {
+        activeBtn.classList.remove('bg-white/[0.03]', 'text-slate-400');
+        activeBtn.classList.add('bg-amber-500', 'text-white', 'shadow-lg');
+    }
+    renderPlatformCourseChapters(lvl);
+}
+
+function openChapterLessonModal(title, duration) {
+    alert(`🎓 ${title} (${duration})\n\nThis lesson script is ready! Have questions about this chapter? Click 'Ask' to email Abhineet directly.`);
+}
+
+function copyDirectEmail() {
+    navigator.clipboard.writeText('abhineetsam2027@gmail.com');
+    showPlatformToast('Copied email: abhineetsam2027@gmail.com');
+}
+
+function openContactModalWithSubject(subject) {
+    switchTab('contact');
+    const subjInput = document.getElementById('contact-subject');
+    if (subjInput) subjInput.value = 'ITSM Integration';
+    const msgInput = document.getElementById('contact-message');
+    if (msgInput) msgInput.value = `Hi Abhineet,\n\n${subject}\n\n[Write your question here...]`;
+}
+
+function showPlatformToast(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'fixed bottom-6 right-6 bg-emerald-500 text-white px-5 py-3 rounded-xl font-bold text-xs shadow-2xl z-[10000] flex items-center gap-2 animate-bounce';
+    toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${msg}`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+// Initial course render
+document.addEventListener('DOMContentLoaded', () => {
+    renderPlatformCourseChapters('all');
+});
+</script>
+
+<script src="course_exam_engine.js"></script>
+</body>
+</html>
+
+
