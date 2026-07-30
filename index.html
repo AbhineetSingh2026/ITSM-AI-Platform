@@ -168,7 +168,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-cyberBg via-transparent to-transparent opacity-80 z-10"></div>
             <!-- Glowing Aura -->
             <div class="absolute -inset-1 bg-gradient-to-tr from-cyberPurple via-cyberCyan to-cyberBlue rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <img src="assets/profile.jpg" alt="Abhineet Singh" class="w-full h-full object-cover relative z-0 transition duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+            <img src="assets/profile.jpg" alt="Abhineet Singh" class="w-full h-full object-cover relative z-0 transition duration-500 group-hover:scale-105">
             <!-- Floating Badge overlay -->
             <div class="absolute bottom-4 left-4 right-4 z-20 glass-panel p-3 border border-white/[0.1] rounded-xl flex items-center justify-between">
               <div>
@@ -1413,9 +1413,141 @@
   </div>
 
   <!-- Database & Application Core Logics -->
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+  
+  
 <script src="course_exam_engine.js"></script>
+
+<!-- ==================== PLATFORM INTERACTIVE LOGIC ==================== -->
+<script>
+  function switchTab(tabId) {
+    console.log("Switching tab to:", tabId);
+    
+    // Hide all tab views
+    const tabViews = document.querySelectorAll('.tab-view');
+    tabViews.forEach(view => {
+      view.classList.add('hidden');
+      view.classList.remove('block');
+    });
+
+    // Show target tab
+    const targetTab = document.getElementById('tab-' + tabId);
+    if (targetTab) {
+      targetTab.classList.remove('hidden');
+      targetTab.classList.add('block');
+    } else {
+      console.warn("Tab not found: tab-" + tabId);
+    }
+
+    // Update desktop sidebar navigation active state
+    const navLinks = document.querySelectorAll('aside nav a');
+    navLinks.forEach(link => {
+      link.classList.remove('active-nav-item', 'bg-white/[0.05]', 'text-white');
+      link.classList.add('text-slate-400');
+    });
+
+    const activeNav = document.getElementById('nav-' + tabId);
+    if (activeNav) {
+      activeNav.classList.add('active-nav-item', 'text-white');
+      activeNav.classList.remove('text-slate-400');
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function switchTabMobile(tabId) {
+    switchTab(tabId);
+    const mobileOverlay = document.getElementById('mobile-nav-overlay');
+    if (mobileOverlay) {
+      mobileOverlay.classList.add('hidden');
+      mobileOverlay.classList.remove('flex');
+    }
+  }
+
+  function toggleMobileNav() {
+    const mobileOverlay = document.getElementById('mobile-nav-overlay');
+    if (mobileOverlay) {
+      if (mobileOverlay.classList.contains('hidden')) {
+        mobileOverlay.classList.remove('hidden');
+        mobileOverlay.classList.add('flex');
+      } else {
+        mobileOverlay.classList.add('hidden');
+        mobileOverlay.classList.remove('flex');
+      }
+    }
+  }
+
+  function updateDashboardMetrics(type) {
+    const btnGlobal = document.getElementById('dash-btn-global');
+    const btnBhc = document.getElementById('dash-btn-bhc');
+    const btnNhs = document.getElementById('dash-btn-nhs');
+    const btnCaesars = document.getElementById('dash-btn-caesars');
+
+    const btns = [btnGlobal, btnBhc, btnNhs, btnCaesars];
+    btns.forEach(btn => {
+      if (btn) {
+        btn.classList.remove('bg-cyberPurple', 'text-white', 'shadow');
+        btn.classList.add('text-slate-400');
+      }
+    });
+
+    const targetBtn = document.getElementById('dash-btn-' + type);
+    if (targetBtn) {
+      targetBtn.classList.add('bg-cyberPurple', 'text-white', 'shadow');
+      targetBtn.classList.remove('text-slate-400');
+    }
+
+    const mttrVal = document.getElementById('dash-mttr-val');
+    const slaVal = document.getElementById('dash-sla-val');
+    const xlaVal = document.getElementById('dash-xla-val');
+
+    if (type === 'global') {
+      if (mttrVal) mttrVal.textContent = '45m';
+      if (slaVal) slaVal.textContent = '98.2%';
+      if (xlaVal) xlaVal.textContent = '9.5/10';
+    } else if (type === 'bhc') {
+      if (mttrVal) mttrVal.textContent = '38m';
+      if (slaVal) slaVal.textContent = '99.1%';
+      if (xlaVal) xlaVal.textContent = '9.7/10';
+    } else if (type === 'nhs') {
+      if (mttrVal) mttrVal.textContent = '42m';
+      if (slaVal) slaVal.textContent = '97.8%';
+      if (xlaVal) xlaVal.textContent = '9.4/10';
+    } else if (type === 'caesars') {
+      if (mttrVal) mttrVal.textContent = '35m';
+      if (slaVal) slaVal.textContent = '99.4%';
+      if (xlaVal) xlaVal.textContent = '9.8/10';
+    }
+  }
+
+  function toggleAccessStudentField() {
+    const profile = document.getElementById('access-profile');
+    const studentBox = document.getElementById('access-student-box');
+    if (profile && studentBox) {
+      if (profile.value === 'Student') {
+        studentBox.classList.remove('hidden');
+      } else {
+        studentBox.classList.add('hidden');
+      }
+    }
+  }
+
+  function enterAsGuest() {
+    switchTab('home');
+  }
+
+  function closeSOPViewer() {
+    const modal = document.getElementById('sop-viewer-modal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function copyDirectEmail() {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText('abhineetsam2027@gmail.com');
+      alert('Email copied to clipboard: abhineetsam2027@gmail.com');
+    }
+  }
+</script>
+
 </body>
 </html>
 
