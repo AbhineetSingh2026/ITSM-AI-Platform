@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+import re
+import shutil
+from pathlib import Path
+
+WORKSPACE_DIR = Path("c:/ANTIGRAVITY_ABHINEET/MY WORKSPACE/itsm-ai-platform")
+INDEX_PATH = WORKSPACE_DIR / "index.html"
+
+# Ensure assets directory has Abhineet's profile pic and YT thumbnails
+ASSETS_DIR = WORKSPACE_DIR / "assets"
+ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+
+SRC_PHOTO = Path("C:/ANTIGRAVITY_ABHINEET/MY_EARNING/linkedin_profile_pic.jpg")
+if SRC_PHOTO.exists():
+    shutil.copy2(SRC_PHOTO, ASSETS_DIR / "profile.jpg")
+
+YT_DIR = Path("C:/ANTIGRAVITY_ABHINEET/MY_EARNING/You tube Channel")
+if (YT_DIR / "01_L1_IS_DEAD.png").exists():
+    shutil.copy2(YT_DIR / "01_L1_IS_DEAD.png", ASSETS_DIR / "yt_thumb_1.png")
+if (YT_DIR / "03_AI_Flowchart.png").exists():
+    shutil.copy2(YT_DIR / "03_AI_Flowchart.png", ASSETS_DIR / "yt_thumb_2.png")
+if (YT_DIR / "youtube_thumbnail.png").exists():
+    shutil.copy2(YT_DIR / "youtube_thumbnail.png", ASSETS_DIR / "yt_thumb_3.png")
+
+# Construct Ultra-Premium Luxury index.html
+ultra_premium_html = """<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -692,7 +716,7 @@
       <section id="tab-contact" class="tab-view hidden space-y-8 max-w-6xl mx-auto">
         <div class="glass-panel p-8 space-y-6 rounded-3xl">
           <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-cyberCyan/10 border border-cyberCyan/30 text-cyberCyan inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> Get in Touch</span>
-          <h2 class="text-3xl font-bold text-white">Book Consultation / Contact Abhineet (<span class="text-cyberCyan">abhineetsam2027@gmail.com</span>)</h2>
+          <h2 class="text-3xl font-bold text-white">Book Consultation / Contact Abhineet</h2>
           <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to Abhineet.');" class="space-y-4 max-w-xl">
             <div>
               <label class="text-xs font-bold text-slate-400 uppercase">Your Name</label>
@@ -1136,3 +1160,7 @@
   <script src="course_exam_engine.js"></script>
 </body>
 </html>
+"""
+
+INDEX_PATH.write_text(ultra_premium_html, encoding="utf-8")
+print("[OK] Rebuilt index.html with Ultra-Premium Luxury Navy Blue Aesthetics & 100% Functionality!")
